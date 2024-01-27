@@ -1,0 +1,1 @@
+make sure you apply modifiers before or in the export dialog under data>Mesh befor exporting
