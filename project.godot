@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="laughtrack"
+config/name="Laugh Track"
 run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=60
