@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c21x4s13sqp8r"]
+
+[ext_resource type="PackedScene" uid="uid://bptwaqqhwm4lv" path="res://artwork/racetrack/GLTF format/grass.glb" id="1_agenm"]
+
+[node name="grass" instance=ExtResource("1_agenm")]
+
+[node name="grass(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwk7eh8fewgvp"]
+
+[ext_resource type="PackedScene" uid="uid://cwbyosx3l0q8c" path="res://artwork/racetrack/GLTF format/fenceCurved.glb" id="1_ahy5i"]
+
+[node name="fenceCurved" instance=ExtResource("1_ahy5i")]
+
+[node name="fenceCurved(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

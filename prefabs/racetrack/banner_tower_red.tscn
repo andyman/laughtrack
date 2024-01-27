@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bofhfnsg050dg"]
+
+[ext_resource type="PackedScene" uid="uid://bp52ta5qmklvt" path="res://artwork/racetrack/GLTF format/bannerTowerRed.glb" id="1_da3x3"]
+
+[node name="bannerTowerRed" instance=ExtResource("1_da3x3")]
+
+[node name="bannerTowerRed(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

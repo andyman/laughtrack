@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://csqtlh5fmiexf"]
+
+[ext_resource type="PackedScene" uid="uid://c217oaxbtqkff" path="res://artwork/racetrack/GLTF format/billboardLower.glb" id="1_hepw5"]
+
+[node name="billboardLower" instance=ExtResource("1_hepw5")]
+
+[node name="billboardLower(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

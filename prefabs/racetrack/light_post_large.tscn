@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dahuumuh02k6f"]
+
+[ext_resource type="PackedScene" uid="uid://br4v2ini5kmu8" path="res://artwork/racetrack/GLTF format/lightPostLarge.glb" id="1_f4484"]
+
+[node name="lightPostLarge" instance=ExtResource("1_f4484")]
+
+[node name="lightPostLarge(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

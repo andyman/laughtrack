@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bky72vss7cw62"]
+
+[ext_resource type="PackedScene" uid="uid://b1nlvnowkv474" path="res://artwork/racetrack/GLTF format/pitsOffice.glb" id="1_vrecy"]
+
+[node name="pitsOffice" instance=ExtResource("1_vrecy")]
+
+[node name="pitsOffice(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

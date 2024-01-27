@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc2yn6bcxtjsu"]
+
+[ext_resource type="PackedScene" uid="uid://bltfvxlv0ve1f" path="res://artwork/racetrack/GLTF format/camera_exclusive.glb" id="1_icyjn"]
+
+[node name="camera_exclusive" instance=ExtResource("1_icyjn")]
+
+[node name="camera_exclusive(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cebm0wg3y8eg3"]
+
+[ext_resource type="PackedScene" uid="uid://c86r8jo0lc7jo" path="res://artwork/racetrack/GLTF format/roadRampLongCurvedWall.glb" id="1_jedqj"]
+
+[node name="roadRampLongCurvedWall" instance=ExtResource("1_jedqj")]
+
+[node name="roadRampLongCurvedWall(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

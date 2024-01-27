@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyjcp3fq1jcbh"]
+
+[ext_resource type="PackedScene" uid="uid://drunvakvtklog" path="res://artwork/racetrack/GLTF format/roadStraightLongBump.glb" id="1_6mogy"]
+
+[node name="roadStraightLongBump" instance=ExtResource("1_6mogy")]
+
+[node name="roadStraightLongBump(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25, 0, 0)

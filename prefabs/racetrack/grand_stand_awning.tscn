@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2cu44qxqtn1h"]
+
+[ext_resource type="PackedScene" uid="uid://cqb2h0d2gjiih" path="res://artwork/racetrack/GLTF format/grandStandAwning.glb" id="1_2k7tr"]
+
+[node name="grandStandAwning" instance=ExtResource("1_2k7tr")]
+
+[node name="grandStandAwning(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)

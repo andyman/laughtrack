@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfwkofsvumso8"]
+
+[ext_resource type="PackedScene" uid="uid://bec8dn7c33nki" path="res://artwork/racetrack/GLTF format/flagGreen.glb" id="1_gvlq0"]
+
+[node name="flagGreen" instance=ExtResource("1_gvlq0")]
+
+[node name="flagGreen(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

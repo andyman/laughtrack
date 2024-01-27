@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://iqo06ur3526n"]
+
+[ext_resource type="PackedScene" uid="uid://budd7wd6vx503" path="res://artwork/racetrack/GLTF format/railDouble.glb" id="1_cupy2"]
+
+[node name="railDouble" instance=ExtResource("1_cupy2")]
+
+[node name="railDouble(Clone)" parent="." index="0"]
+transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, -25, 0, 0)

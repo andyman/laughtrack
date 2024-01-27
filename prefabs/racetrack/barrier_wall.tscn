@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4ftclnoq0oti"]
+
+[ext_resource type="PackedScene" uid="uid://cf873e8gfvxrv" path="res://artwork/racetrack/GLTF format/barrierWall.glb" id="1_xf3vg"]
+
+[node name="barrierWall" instance=ExtResource("1_xf3vg")]
+
+[node name="barrierWall(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

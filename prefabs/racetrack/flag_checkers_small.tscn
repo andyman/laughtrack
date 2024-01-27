@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwvdvb2q3nkun"]
+
+[ext_resource type="PackedScene" uid="uid://cgrw5j0km4lmx" path="res://artwork/racetrack/GLTF format/flagCheckersSmall.glb" id="1_sckbh"]
+
+[node name="flagCheckersSmall" instance=ExtResource("1_sckbh")]
+
+[node name="flagCheckersSmall(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

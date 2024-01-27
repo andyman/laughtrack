@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mfxbq6adb8s6"]
+
+[ext_resource type="PackedScene" uid="uid://bbokw5847r3pw" path="res://artwork/racetrack/GLTF format/radarEquipment.glb" id="1_dhfr5"]
+
+[node name="radarEquipment" instance=ExtResource("1_dhfr5")]
+
+[node name="radarEquipment(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

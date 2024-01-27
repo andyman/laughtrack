@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bctji0bfqfajr"]
+
+[ext_resource type="PackedScene" uid="uid://ci8l72sw4jh0s" path="res://artwork/racetrack/GLTF format/roadSplitLarger.glb" id="1_nlbsa"]
+
+[node name="roadSplitLarger" instance=ExtResource("1_nlbsa")]
+
+[node name="roadSplitLarger(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

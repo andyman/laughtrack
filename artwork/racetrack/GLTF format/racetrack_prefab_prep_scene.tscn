@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0edxxlcpfs4u"]
+[gd_scene load_steps=5 format=3 uid="uid://c0edxxlcpfs4u"]
 
-[ext_resource type="PackedScene" uid="uid://bwgs8nuti0tdd" path="res://artwork/racetrack/GLTF format/roadBump.glb" id="1_kvhy2"]
+[ext_resource type="PackedScene" uid="uid://pvemd42j1f8r" path="res://prefabs/racetrack/road_start.tscn" id="1_rll8s"]
+[ext_resource type="PackedScene" uid="uid://cokkl8lr4evc5" path="res://prefabs/racetrack/road_straight_long.tscn" id="2_m8mm0"]
+[ext_resource type="PackedScene" uid="uid://c3strxr1xeix8" path="res://prefabs/racetrack/road_straight_bridge.tscn" id="3_v4d72"]
+[ext_resource type="PackedScene" uid="uid://cyjcp3fq1jcbh" path="res://prefabs/racetrack/road_straight_long_bump.tscn" id="4_6vuai"]
 
 [node name="RacetrackPrefabPrepScene" type="Node3D"]
 
-[node name="roadBump" parent="." instance=ExtResource("1_kvhy2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 450, 750, -250)
+[node name="roadStart" parent="." instance=ExtResource("1_rll8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+
+[node name="roadStraightLong" parent="." instance=ExtResource("2_m8mm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+
+[node name="roadStraightBridge" parent="." instance=ExtResource("3_v4d72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200)
+
+[node name="roadStraightLongBump" parent="." instance=ExtResource("4_6vuai")]

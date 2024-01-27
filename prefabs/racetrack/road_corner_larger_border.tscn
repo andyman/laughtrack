@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxoik1q6ej7l8"]
+
+[ext_resource type="PackedScene" uid="uid://dy1m70laqucsl" path="res://artwork/racetrack/GLTF format/roadCornerLargerBorder.glb" id="1_3ve3q"]
+
+[node name="roadCornerLargerBorder" instance=ExtResource("1_3ve3q")]
+
+[node name="roadCornerLargerBorder(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

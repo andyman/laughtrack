@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btxooi5omqxtk"]
+
+[ext_resource type="PackedScene" uid="uid://07tdtyk71a5c" path="res://artwork/racetrack/GLTF format/roadStraightArrow.glb" id="1_co4kd"]
+
+[node name="roadStraightArrow" instance=ExtResource("1_co4kd")]
+
+[node name="roadStraightArrow(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djjdf2gh25hu4"]
+
+[ext_resource type="PackedScene" uid="uid://dlr71nso2yn1e" path="res://artwork/racetrack/GLTF format/roadCornerLargeSandInner.glb" id="1_ku3bt"]
+
+[node name="roadCornerLargeSandInner" instance=ExtResource("1_ku3bt")]
+
+[node name="roadCornerLargeSandInner(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
