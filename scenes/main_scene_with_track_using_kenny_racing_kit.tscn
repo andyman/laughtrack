@@ -1,0 +1,111 @@
+[gd_scene load_steps=19 format=3 uid="uid://cqt5gjmcw68bv"]
+
+[ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_in7s4"]
+[ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_52rg1"]
+[ext_resource type="PackedScene" uid="uid://dd3dd5vku0ubt" path="res://prefabs/follow_cam.tscn" id="2_lw8ue"]
+[ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="3_i0a70"]
+[ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="4_je8bp"]
+[ext_resource type="PackedScene" uid="uid://dkfjx0isftumy" path="res://artwork/racetrack/GLTF format/roadStraightLong.glb" id="5_uyp22"]
+[ext_resource type="PackedScene" uid="uid://wo7rhu6qssfm" path="res://artwork/racetrack/GLTF format/roadRampLong.glb" id="6_taer4"]
+[ext_resource type="PackedScene" uid="uid://drunvakvtklog" path="res://artwork/racetrack/GLTF format/roadStraightLongBump.glb" id="7_3khe6"]
+[ext_resource type="PackedScene" uid="uid://c86r8jo0lc7jo" path="res://artwork/racetrack/GLTF format/roadRampLongCurvedWall.glb" id="8_5cjf2"]
+[ext_resource type="PackedScene" uid="uid://vlqp028jg2ge" path="res://artwork/racetrack/GLTF format/roadCornerLarger.glb" id="9_8h1bq"]
+[ext_resource type="PackedScene" uid="uid://dy1m70laqucsl" path="res://artwork/racetrack/GLTF format/roadCornerLargerBorder.glb" id="10_veg1u"]
+[ext_resource type="PackedScene" uid="uid://b7x5oqxmyisy4" path="res://artwork/racetrack/GLTF format/roadCornerLargerBorderInner.glb" id="11_3xvlp"]
+[ext_resource type="PackedScene" uid="uid://b17ecf3ecilxo" path="res://artwork/racetrack/GLTF format/roadCornerLargerSand.glb" id="12_bqxf5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tjij1"]
+sky_material = SubResource("ProceduralSkyMaterial_jp5wt")
+
+[sub_resource type="Environment" id="Environment_vv68l"]
+background_mode = 2
+sky = SubResource("Sky_tjij1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fwqe"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3t0yu"]
+size = Vector3(1000, 10, 1000)
+
+[node name="main_scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vv68l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Car" parent="." instance=ExtResource("1_in7s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_6fwqe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+mesh = SubResource("BoxMesh_3t0yu")
+surface_material_override/0 = ExtResource("2_52rg1")
+
+[node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("2_lw8ue")]
+target = NodePath("../Car")
+look_target = NodePath("../Car")
+
+[node name="EscapeToQuit" parent="." instance=ExtResource("3_i0a70")]
+
+[node name="reference_block" parent="." instance=ExtResource("4_je8bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.8306)
+
+[node name="reference_block2" parent="." instance=ExtResource("4_je8bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8724, 0, -1.74363)
+
+[node name="reference_block3" parent="." instance=ExtResource("4_je8bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05561, 0, -26.1247)
+
+[node name="reference_block4" parent="." instance=ExtResource("4_je8bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.5115, 0, -1.8163)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+
+[node name="roadStraightLong" parent="StaticBody3D2" instance=ExtResource("5_uyp22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364985, 0.302328, -12.393)
+
+[node name="roadStraightLong(Clone)" parent="StaticBody3D2/roadStraightLong" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, -32.5)
+
+[node name="roadRampLong" parent="StaticBody3D2" instance=ExtResource("6_taer4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -112)
+
+[node name="roadRampLong(Clone)" parent="StaticBody3D2/roadRampLong" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 0, -32.5)
+
+[node name="roadStraightLongBump" parent="." instance=ExtResource("7_3khe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104, 0, 2)
+
+[node name="roadRampLongCurvedWall" parent="." instance=ExtResource("8_5cjf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179, 0, 6)
+
+[node name="roadCornerLarger" parent="." instance=ExtResource("9_8h1bq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -354, 0, -169)
+
+[node name="roadCornerLargerBorder" parent="." instance=ExtResource("10_veg1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -283, 0, -105)
+
+[node name="roadCornerLargerBorderInner" parent="." instance=ExtResource("11_3xvlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -302, 0, -92)
+
+[node name="roadCornerLargerSand" parent="." instance=ExtResource("12_bqxf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -258, 0, -57)
+
+[editable path="StaticBody3D2/roadStraightLong"]
+[editable path="StaticBody3D2/roadRampLong"]

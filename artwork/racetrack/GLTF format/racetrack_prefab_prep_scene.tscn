@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0edxxlcpfs4u"]
+
+[ext_resource type="PackedScene" uid="uid://bwgs8nuti0tdd" path="res://artwork/racetrack/GLTF format/roadBump.glb" id="1_kvhy2"]
+
+[node name="RacetrackPrefabPrepScene" type="Node3D"]
+
+[node name="roadBump" parent="." instance=ExtResource("1_kvhy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 450, 750, -250)
