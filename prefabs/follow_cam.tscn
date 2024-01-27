@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd3dd5vku0ubt"]
+
+[ext_resource type="Script" path="res://scripts/follow_cam.gd" id="1_lrdqe"]
+
+[node name="FollowCam" type="Node3D" node_paths=PackedStringArray("target", "look_target")]
+script = ExtResource("1_lrdqe")
+target = NodePath("")
+look_target = NodePath("")
+follow_smoothing_lerp = Vector3(20, 5, 20)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 5.32907e-15, 8.74228e-08, 4.36757e-08, 0.866261, 0.499592, -7.57309e-08, 0.499592, -0.866261, 0, 14.3502, -19)
+far = 1000.0
