@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://knna31kxg2do"]
+[gd_scene load_steps=5 format=3 uid="uid://knna31kxg2do"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_dlrj5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fwqe"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kkac8"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keyrr"]
+albedo_color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="main_scene" type="Node3D"]
+
+[node name="Car" parent="." instance=ExtResource("1_dlrj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_6fwqe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_kkac8")
+surface_material_override/0 = SubResource("StandardMaterial3D_keyrr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 8, -19)
