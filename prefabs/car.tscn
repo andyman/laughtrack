@@ -1,82 +1,71 @@
-[gd_scene load_steps=6 format=3 uid="uid://ih5cxuyg5rr5"]
+[gd_scene load_steps=5 format=3 uid="uid://ih5cxuyg5rr5"]
 
 [ext_resource type="Script" path="res://scripts/clown_car_controller.gd" id="1_s50ls"]
-[ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="1_un8th"]
+[ext_resource type="PackedScene" uid="uid://dijj6wchlfaxu" path="res://artwork/car/Clowncar_wheel.glb" id="3_7k7lp"]
+[ext_resource type="PackedScene" uid="uid://bt03euxdplqm5" path="res://artwork/car/Clowncar_Body.glb" id="4_vcxg5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ujjs4"]
-size = Vector3(3, 1, 5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_dnhej"]
-size = Vector3(3, 1, 5)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_40dcl"]
-material = ExtResource("1_un8th")
-top_radius = 1.0
-bottom_radius = 1.0
-height = 0.5
+size = Vector3(2.66113, 0.931641, 4.45203)
 
 [node name="Car" type="VehicleBody3D"]
 mass = 100.0
+center_of_mass_mode = 1
 script = ExtResource("1_s50ls")
 steer_strength = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548448, 0.0629272)
 shape = SubResource("BoxShape3D_ujjs4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_dnhej")
-skeleton = NodePath("../CollisionShape3D")
+[node name="Clowncar_Body" parent="." instance=ExtResource("4_vcxg5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.529459, -1.42111)
 
 [node name="RearLeft" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80071, -0.10671, -1.84143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20743, 0.0805613, -1.37048)
 use_as_traction = true
-wheel_radius = 1.0
+wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
 suspension_stiffness = 50.0
 damping_compression = 0.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RearLeft"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_40dcl")
+[node name="Clowncar_wheel" parent="RearLeft" instance=ExtResource("3_7k7lp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="RearRight" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79769, -0.10671, -1.84143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.207, 0.081, -1.37021)
 use_as_traction = true
-wheel_radius = 1.0
+wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
 suspension_stiffness = 50.0
 damping_compression = 0.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RearRight"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_40dcl")
+[node name="Clowncar_wheel" parent="RearRight" instance=ExtResource("3_7k7lp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="FrontRight2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80071, -0.10671, 1.85672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.207, 0.081, 1.4318)
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 1.0
+wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
 suspension_stiffness = 50.0
 damping_compression = 0.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontRight2"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_40dcl")
+[node name="Clowncar_wheel" parent="FrontRight2" instance=ExtResource("3_7k7lp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="FrontLeft2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79769, -0.10671, 1.85672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.207, 0.081, 1.4318)
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 1.0
+wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
 suspension_stiffness = 50.0
 damping_compression = 0.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontLeft2"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CylinderMesh_40dcl")
+[node name="Clowncar_wheel" parent="FrontLeft2" instance=ExtResource("3_7k7lp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
