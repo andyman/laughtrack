@@ -1,6 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://knna31kxg2do"]
+[gd_scene load_steps=11 format=3 uid="uid://knna31kxg2do"]
 
 [ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_dlrj5"]
+[ext_resource type="Script" path="res://scripts/follow_cam.gd" id="2_k0nla"]
+[ext_resource type="Script" path="res://scripts/esc_to_quit.gd" id="3_iiqgc"]
+[ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="4_mjix5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tjij1"]
+sky_material = SubResource("ProceduralSkyMaterial_jp5wt")
+
+[sub_resource type="Environment" id="Environment_vv68l"]
+background_mode = 2
+sky = SubResource("Sky_tjij1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6fwqe"]
 size = Vector3(1000, 10, 1000)
@@ -12,6 +29,13 @@ size = Vector3(1000, 10, 1000)
 albedo_color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [node name="main_scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vv68l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Car" parent="." instance=ExtResource("1_dlrj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -26,5 +50,27 @@ shape = SubResource("BoxShape3D_6fwqe")
 mesh = SubResource("BoxMesh_kkac8")
 surface_material_override/0 = SubResource("StandardMaterial3D_keyrr")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 8, -19)
+[node name="FollowCam" type="Node3D" parent="." node_paths=PackedStringArray("target", "look_target")]
+script = ExtResource("2_k0nla")
+target = NodePath("../Car")
+look_target = NodePath("../Car")
+follow_smoothing_lerp = Vector3(20, 5, 20)
+
+[node name="Camera3D" type="Camera3D" parent="FollowCam"]
+transform = Transform3D(-1, 5.32907e-15, 8.74228e-08, 4.36757e-08, 0.866261, 0.499592, -7.57309e-08, 0.499592, -0.866261, 0, 14.3502, -19)
+far = 1000.0
+
+[node name="EscapeToQuit" type="Node" parent="."]
+script = ExtResource("3_iiqgc")
+
+[node name="reference_block" parent="." instance=ExtResource("4_mjix5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.8306)
+
+[node name="reference_block2" parent="." instance=ExtResource("4_mjix5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8724, 0, -1.74363)
+
+[node name="reference_block3" parent="." instance=ExtResource("4_mjix5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05561, 0, -26.1247)
+
+[node name="reference_block4" parent="." instance=ExtResource("4_mjix5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.5115, 0, -1.8163)

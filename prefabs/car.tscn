@@ -11,11 +11,14 @@ size = Vector3(3, 1, 5)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_40dcl"]
 material = ExtResource("1_un8th")
+top_radius = 1.0
+bottom_radius = 1.0
 height = 0.5
 
 [node name="Car" type="VehicleBody3D"]
+mass = 100.0
 script = ExtResource("1_s50ls")
-engine_acceleration = 800.0
+steer_strength = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ujjs4")
@@ -25,38 +28,54 @@ mesh = SubResource("BoxMesh_dnhej")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="RearLeft" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80071, -0.409057, -1.84143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80071, -0.10671, -1.84143)
 use_as_traction = true
 wheel_radius = 1.0
+wheel_rest_length = 0.2
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+damping_compression = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RearLeft"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_40dcl")
 
 [node name="RearRight" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79769, -0.409057, -1.84143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79769, -0.10671, -1.84143)
 use_as_traction = true
 wheel_radius = 1.0
+wheel_rest_length = 0.2
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+damping_compression = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RearRight"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_40dcl")
 
 [node name="FrontRight2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80071, -0.409057, 1.85672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80071, -0.10671, 1.85672)
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 1.0
+wheel_rest_length = 0.2
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+damping_compression = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FrontRight2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_40dcl")
 
 [node name="FrontLeft2" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79769, -0.409057, 1.85672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79769, -0.10671, 1.85672)
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 1.0
+wheel_rest_length = 0.2
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+damping_compression = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FrontLeft2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
