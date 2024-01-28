@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/sphere_car.gd" id="1_k4426"]
 [ext_resource type="Texture2D" uid="uid://ca3in2yhondvk" path="res://artwork/car/texture_09.png" id="2_arhhj"]
-[ext_resource type="PackedScene" path="res://prefabs/clowncar.tscn" id="3_00ejc"]
+[ext_resource type="PackedScene" uid="uid://c4o37mcm0t07v" path="res://prefabs/clowncar.tscn" id="3_00ejc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pcc34"]
 bounce = 0.1

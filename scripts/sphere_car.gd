@@ -8,6 +8,8 @@ extends RigidBody3D
 @export var turn_stop_limit = 0.75
 @export var body_tilt = 170
 
+@export var started = false
+
 var speed_input = 0
 var turn_input = 0
 var enable_ray = false
@@ -18,6 +20,10 @@ var enable_ray = false
 @onready var right_wheel = $clowncar/clowncar3/Wheel_FR
 @onready var left_wheel = $clowncar/clowncar3/Wheel_FL
 
+func _on_countdown_startinggunfired():
+	started = true
+	pass
+
 #func _ready():
 #	ground_ray.add_exception(self)
 	
@@ -27,7 +33,8 @@ func _physics_process(delta):
 		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
 	
 func _process(delta):
-
+	if not started:
+		return
 	if not ground_ray.is_colliding():
 		return
 	speed_input = Input.get_axis("brake","accelerate") * acceleration

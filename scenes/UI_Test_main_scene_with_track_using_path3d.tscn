@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=3 uid="uid://clr4vdt3hreo6"]
+
+[ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="1_kcxay"]
+[ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="2_580xi"]
+[ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="3_joaje"]
+[ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="4_o23u7"]
+[ext_resource type="Theme" uid="uid://csmql14t37xar" path="res://UI/hud.tres" id="5_86y8w"]
+[ext_resource type="Script" path="res://scripts/timer.gd" id="6_k4g63"]
+[ext_resource type="Script" path="res://scenes/Countdown.gd" id="7_2vebb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tjij1"]
+sky_material = SubResource("ProceduralSkyMaterial_jp5wt")
+
+[sub_resource type="Environment" id="Environment_vv68l"]
+background_mode = 2
+sky = SubResource("Sky_tjij1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fwqe"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kkac8"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keyrr"]
+albedo_color = Color(0.392157, 0.392157, 0.392157, 0.427451)
+
+[node name="main_scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vv68l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_6fwqe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_kkac8")
+surface_material_override/0 = SubResource("StandardMaterial3D_keyrr")
+
+[node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("1_kcxay")]
+target = NodePath("../SphereCar")
+look_target = NodePath("../SphereCar")
+
+[node name="EscapeToQuit" parent="." instance=ExtResource("2_580xi")]
+
+[node name="reference_block" parent="." instance=ExtResource("3_joaje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.8306)
+
+[node name="reference_block2" parent="." instance=ExtResource("3_joaje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8724, 0, -1.74363)
+
+[node name="reference_block3" parent="." instance=ExtResource("3_joaje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05561, 0, -26.1247)
+
+[node name="reference_block4" parent="." instance=ExtResource("3_joaje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.5115, 0, -1.8163)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109033, 0.30262, -0.0745146)
+polygon = PackedVector2Array(-19.6686, -0.408885, -19.5831, 1.47775, 21.7456, 1.49217, 22.855, -1.44708)
+mode = 2
+path_node = NodePath("")
+path_interval_type = 0
+path_interval = 10.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+
+[node name="SphereCar" parent="." instance=ExtResource("4_o23u7")]
+transform = Transform3D(0.999981, 0.00614352, 0, -0.00614352, 0.999981, 0, 0, 0, 1, 0, 3.00054, 0)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="TimeNumberLabel" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.5
+offset_right = 90.5
+offset_bottom = 63.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_86y8w")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("6_k4g63")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+offset_left = 40.0
+offset_top = 25.0
+offset_right = 529.0
+offset_bottom = 648.0
+
+[node name="ScoreLabel" type="Label" parent="HUD/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_86y8w")
+theme_override_font_sizes/font_size = 64
+text = "Clowns: "
+
+[node name="LapsLabel" type="Label" parent="HUD/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_86y8w")
+theme_override_font_sizes/font_size = 64
+text = "Laps:"
+
+[node name="Countdown" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -11.5
+offset_right = 54.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_86y8w")
+theme_override_font_sizes/font_size = 72
+text = "COUNTDOWN"
+horizontal_alignment = 1
+script = ExtResource("7_2vebb")
+
+[node name="Timer" type="Timer" parent="HUD/Countdown"]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="startinggunfired" from="HUD/Countdown" to="SphereCar" method="_on_countdown_startinggunfired"]
+[connection signal="startinggunfired" from="HUD/Countdown" to="HUD/TimeNumberLabel" method="_on_countdown_startinggunfired"]
