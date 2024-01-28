@@ -20,6 +20,10 @@ var enable_ray = false
 @onready var right_wheel = $clowncar/clowncar3/Wheel_FR
 @onready var left_wheel = $clowncar/clowncar3/Wheel_FL
 
+
+func _ready():
+	pass
+
 func _on_countdown_startinggunfired():
 	started = true
 	pass

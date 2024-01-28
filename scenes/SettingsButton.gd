@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 func _on_pressed():
-	$startsound.play()
+	$settingsound.play()
 	pass # Replace with function body.
