@@ -26,7 +26,10 @@ const DIST_FROM_CAM : float= -5.0
 const SPIN_RATE : float = 2.0
 const SPIN_LERP_RATE : float = 20.0
 const SPIN_RADIUS : float = 1
-const LAUNCH_SPEED : float = 100.0
+const LAUNCH_SPEED : float = 50.0
+const JOINT_BIAS_STRENGTH : float = 1000
+const JOINT_DAMPING_STRENGTH : float = 100
+const FAKE_JOINT_MAX_IMPULSE : float = 100
 
 var cam : Camera3D
 var circle_time : float = 0.0
@@ -115,7 +118,6 @@ func _fired_clown_hit(body):
 	
 	var layer = body.collision_layer
 	
-	
 	if (layer == 4):
 		state = ClownState.CLINGING
 		print("** Cling onto clownstack: ", body.name)
@@ -140,15 +142,16 @@ func _fired_clown_hit(body):
 	
 	_update_layers()
 	
-const JOINT_BIAS_STRENGTH : float = 1000
-const JOINT_DAMPING_STRENGTH : float = 100
 
 func _cling_onto(body : PhysicsBody3D):
 	var anchor : Node3D = Node3D.new()
-	anchor.global_position = global_position
-	anchor.global_rotation = global_rotation
 	body.add_child(anchor)
-	clinging_onto = anchor	
+	
+	anchor.global_position = global_position.lerp(body.global_position, 0.25)
+	
+	anchor.global_rotation = global_rotation
+
+	clinging_onto = anchor
 	
 	#var joint : PinJoint3D = PinJoint3D.new()
 	#joint.node_a = body.get_path()
