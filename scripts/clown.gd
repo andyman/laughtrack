@@ -17,6 +17,7 @@ enum ClownState {PEDESTRIAN, FLYING, FIRED, CLINGING, DEAD}
 
 @export var head_gear : Array[Node3D] = [] 
 @export var neck_accessories : Array[Node3D] = [] 
+@export var main_collision_trigger : CollisionShape3D
 
 @export_flags_3d_physics var pedestrian_mask
 @export_flags_3d_physics var flying_mask
@@ -37,11 +38,27 @@ var cam : Camera3D
 var circle_time : float = 0.0
 var anchor : Node3D
 
+static var clinging_clowns : Array[Clown] = []
+
+static func clear_clinging_clowns():
+	clinging_clowns.clear()
+
+static func count_clinging_clowns() -> int:
+	var count : int = 0
+	for clown in clinging_clowns:
+		if (clown != null):
+			count += 1
+			
+	return count
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_randomize_accessories()
 	_update_layers()
 
+func _exit_tree():
+	_remove_from_clinging_clowns()
+	
 func _randomize_accessories():
 	head_gear.pick_random().visible = true
 	neck_accessories.pick_random().visible = true
@@ -53,12 +70,21 @@ func _process(delta):
 			_process_flying(delta)
 		ClownState.CLINGING:
 			_cling()
+			if (clinging_onto != null):
+				clinging_onto.rotate_y(deg_to_rad(randf_range(-1.0, 1.0)) * delta)
+				clinging_onto.rotate_x(deg_to_rad(randf_range(-1.0, 1.0)) * delta)
+				clinging_onto.rotate_z(deg_to_rad(randf_range(-1.0, 1.0)) * delta)
 
 	
 func _cling():
-	if (state == ClownState.CLINGING && clinging_onto != null):
-		global_position = clinging_onto.global_position
-		global_rotation = clinging_onto.global_rotation
+	if (state == ClownState.CLINGING):
+		if (clinging_onto != null):
+			global_position = clinging_onto.global_position
+			global_rotation = clinging_onto.global_rotation
+		else:
+			# otherwise we fall and die
+			state = ClownState.DEAD
+			_delayed_death()
 	
 func _process_physics(delta):
 	#if (state == ClownState.CLINGING):
@@ -111,14 +137,19 @@ func _update_layers():
 	match state:
 		ClownState.PEDESTRIAN: # get hit by clown car
 			trigger_area.collision_mask = pedestrian_mask
+			collision_mask =  pedestrian_mask | 1
 		ClownState.FLYING: # we don't care while we're flying and haven't been fired
 			trigger_area.collision_mask = flying_mask
+			collision_mask =  flying_mask
 		ClownState.FIRED:
 			trigger_area.collision_mask = fired_mask
+			collision_mask =  fired_mask
 		ClownState.CLINGING: # clown that was clinging on to stack got hit
 			trigger_area.collision_mask = clinging_mask
+			collision_mask = clinging_mask
 		ClownState.DEAD: # dead clown got hit, not sure what to do
 			trigger_area.collision_mask = dead_mask
+			collision_mask =  dead_mask
 	
 func _pedestrian_hit(body):
 	if (body is SphereCar or body is ClownStack):		
@@ -163,12 +194,11 @@ func _fired_clown_hit(body):
 func _cling_onto(body : PhysicsBody3D):
 	var anchor : Node3D = Node3D.new()
 	body.add_child(anchor)
-	
-	anchor.global_position = global_position.lerp(body.global_position, 0.5)
-	
+	anchor.global_position = global_position.lerp(body.global_position, 0.5)	
 	anchor.global_rotation = global_rotation
-
 	clinging_onto = anchor
+	clinging_clowns.append(self)
+	main_collision_trigger.call_deferred("set_disabled", true)
 	
 	#var joint : PinJoint3D = PinJoint3D.new()
 	#joint.node_a = body.get_path()
@@ -180,12 +210,17 @@ func _cling_onto(body : PhysicsBody3D):
 	
 	
 func _clinging_hit(body):
-
-	# TODO
-	pass
+	# if it is ground then stop clinging
+	if (body.collision_layer == 1):
+		print("Clown fell off and died!")
+		state = ClownState.DEAD
+		clinging_onto.queue_free()
+		_delayed_death()
 
 func _delayed_death():
 	print("death start")
+	
+	_remove_from_clinging_clowns()
 	var effect_prefab = load("res://prefabs/clown_die_effect.tscn")
 	var effect : Node3D = effect_prefab.instantiate()
 	get_tree().root.add_child(effect)
@@ -198,6 +233,11 @@ func _delayed_death():
 	effect.queue_free()
 	queue_free()
 
+func _remove_from_clinging_clowns():
+	var index : int = clinging_clowns.find(self)
+	if (index != -1):
+		clinging_clowns[index] = null
+		
 func _on_area3d_body_entered(body):
 	match state:
 		ClownState.PEDESTRIAN: # get hit by clown car

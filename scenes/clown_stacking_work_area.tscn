@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://slowi616cm46"]
+[gd_scene load_steps=27 format=3 uid="uid://slowi616cm46"]
 
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_0q6rr"]
-[ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="3_wv6mm"]
 [ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="4_8bayy"]
 [ext_resource type="PackedScene" uid="uid://pvemd42j1f8r" path="res://prefabs/racetrack/road_start.tscn" id="5_r8x4l"]
 [ext_resource type="PackedScene" uid="uid://vnn46eh0kg3f" path="res://prefabs/racetrack/road_straight.tscn" id="6_vlyp2"]
@@ -20,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cyjcp3fq1jcbh" path="res://prefabs/racetrack/road_straight_long_bump.tscn" id="19_3yfjg"]
 [ext_resource type="PackedScene" uid="uid://hskw3ct7xdqq" path="res://prefabs/racetrack/road_corner_large.tscn" id="20_kvvcs"]
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="21_1sxly"]
-[ext_resource type="PackedScene" uid="uid://bgqh5gg4j6j45" path="res://prefabs/clown_stack.tscn" id="21_htety"]
 [ext_resource type="PackedScene" uid="uid://qj41nisi3cwa" path="res://scenes/clown.tscn" id="21_v72g5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
@@ -64,10 +62,6 @@ shape = SubResource("BoxShape3D_6fwqe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.1, 0)
 mesh = SubResource("BoxMesh_3t0yu")
 surface_material_override/0 = ExtResource("2_0q6rr")
-
-[node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("3_wv6mm")]
-target = NodePath("../SphereCar")
-look_target = NodePath("../SphereCar")
 
 [node name="EscapeToQuit" parent="." instance=ExtResource("4_8bayy")]
 
@@ -586,8 +580,7 @@ neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.89468, 0)
 started = true
 
-[node name="ClownStack" parent="." node_paths=PackedStringArray("sphere_car") instance=ExtResource("21_htety")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-sphere_car = NodePath("../SphereCar")
-
 [editable path="roadStraightLong"]
+[editable path="SphereCar"]
+[editable path="SphereCar/CarBodyCenter/clown"]
+[editable path="SphereCar/CarBodyCenter/clowncar"]

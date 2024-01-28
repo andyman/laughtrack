@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://due7e4irws21g"]
+[gd_scene load_steps=20 format=3 uid="uid://due7e4irws21g"]
 
 [ext_resource type="Script" path="res://scripts/sphere_car.gd" id="1_k4426"]
 [ext_resource type="Texture2D" uid="uid://ca3in2yhondvk" path="res://artwork/car/texture_09.png" id="2_arhhj"]
-[ext_resource type="PackedScene" uid="uid://c4o37mcm0t07v" path="res://prefabs/clowncar.tscn" id="3_00ejc"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pcc34"]
-bounce = 0.1
+[ext_resource type="PackedScene" uid="uid://c3cbb6ddjy4ys" path="res://artwork/car/clowncar3.glb" id="3_jdr88"]
+[ext_resource type="PackedScene" uid="uid://bgqh5gg4j6j45" path="res://prefabs/clown_stack.tscn" id="4_jirdq"]
+[ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="5_fdmgj"]
+[ext_resource type="PackedScene" uid="uid://dtsdo511uuj6m" path="res://artwork/car/Clowncar_swheel.glb" id="5_oe3lw"]
+[ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="5_tn3si"]
+[ext_resource type="Material" uid="uid://ctntqthb4ge01" path="res://artwork/clowns/clown_face.tres" id="6_h6c1u"]
+[ext_resource type="Texture2D" uid="uid://kudkpts5y0lw" path="res://artwork/car/Honkplate.png" id="8_l1pmy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_udv5s"]
-radius = 1.5
+radius = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30vc2"]
 transparency = 1
@@ -16,35 +19,146 @@ albedo_texture = ExtResource("2_arhhj")
 
 [sub_resource type="SphereMesh" id="SphereMesh_rl0nl"]
 material = SubResource("StandardMaterial3D_30vc2")
-radius = 2.0
-height = 4.0
+radius = 3.0
+height = 6.0
 
-[node name="SphereCar" type="RigidBody3D" node_paths=PackedStringArray("body_mesh")]
-collision_layer = 2
-mass = 100.0
-physics_material_override = SubResource("PhysicsMaterial_pcc34")
-gravity_scale = 5.0
-angular_damp = 5.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8kpn"]
+shading_mode = 2
+vertex_color_use_as_albedo = true
+metallic_specular = 0.0
+
+[sub_resource type="Curve" id="Curve_wcjwm"]
+max_value = 3.0
+_data = [Vector2(0, 1.05392), 0.0, 0.0, 0, 0, Vector2(0.654676, 1.3282), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_qbqt7"]
+curve = SubResource("Curve_wcjwm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hqxxv"]
+direction = Vector3(0, 0, 1)
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0.2, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_qbqt7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_hvxy3"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="QuadMesh" id="QuadMesh_tmlk5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4hjs"]
+albedo_texture = ExtResource("8_l1pmy")
+
+[node name="SphereCar" type="Node3D" node_paths=PackedStringArray("ball", "clown_stack", "follow_cam", "car_mesh", "body_mesh", "ground_ray", "right_wheel", "left_wheel")]
 script = ExtResource("1_k4426")
-sphere_offset = Vector3(0, -0.7, 0)
+ball = NodePath("Ball")
+sphere_offset = Vector3(0, -2, 0)
 acceleration = 5000.0
 turn_stop_limit = 0.1
-body_mesh = NodePath("clowncar")
+clown_stack = NodePath("CarBodyCenter/ClownStack")
+follow_cam = NodePath("FollowCam")
+car_mesh = NodePath("CarBodyCenter")
+body_mesh = NodePath("CarBodyCenter")
+ground_ray = NodePath("CarBodyCenter/RayCast3D")
+right_wheel = NodePath("CarBodyCenter/clowncar/Wheel_FR")
+left_wheel = NodePath("CarBodyCenter/clowncar/Wheel_FL")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Ball" type="RigidBody3D" parent="."]
+collision_layer = 2
+mass = 100.0
+gravity_scale = 10.0
+angular_damp = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
 shape = SubResource("SphereShape3D_udv5s")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball/CollisionShape3D"]
 visible = false
 mesh = SubResource("SphereMesh_rl0nl")
 
-[node name="clowncar" parent="." instance=ExtResource("3_00ejc")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-top_level = true
+[node name="CarBodyCenter" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="clowncar"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326593, 0)
-target_position = Vector3(0, -2.5, 0)
+[node name="ClownStack" parent="CarBodyCenter" node_paths=PackedStringArray("sphere_car") instance=ExtResource("4_jirdq")]
+transform = Transform3D(-1.5, 0, 2.26494e-07, 0, 1.5, 0, -2.26494e-07, 0, -1.5, 0, 0, 0)
+sphere_car = NodePath("../..")
 
-[node name="CarBodyCenter" type="Node3D" parent="clowncar"]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
+[node name="RayCast3D" type="RayCast3D" parent="CarBodyCenter"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.326593, 0)
+target_position = Vector3(0, -5, 0)
+
+[node name="Clowncar_swheel" parent="CarBodyCenter" instance=ExtResource("5_oe3lw")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -0.160697, 0, 2.5067)
+
+[node name="clown" parent="CarBodyCenter" instance=ExtResource("5_tn3si")]
+transform = Transform3D(-0.997918, 0, -0.0644974, 0, 1, 0, 0.0644974, 0, -0.997918, -0.600501, 1.14487, -0.723748)
+
+[node name="0_BOWTIE" parent="CarBodyCenter/clown/0_BODY_001" index="0"]
+visible = false
+
+[node name="0_NECK TIE" parent="CarBodyCenter/clown/0_BODY_001" index="1"]
+visible = false
+
+[node name="1_ARM_R_001" parent="CarBodyCenter/clown/0_BODY_001" index="3"]
+transform = Transform3D(0.618806, 0, -0.785544, 0, 1, 0, 0.785544, 0, 0.618806, 0.154162, 0.263407, 0.0695237)
+
+[node name="1_FOREARM_L__001" parent="CarBodyCenter/clown/0_BODY_001/1_ARM_R_001" index="0"]
+transform = Transform3D(0.482105, 0, -0.876113, 0, 1, 0, 0.876113, 0, 0.482105, 0.239234, -0.0901225, -0.0917316)
+
+[node name="1_LEG_R_001" parent="CarBodyCenter/clown/0_BODY_001" index="4"]
+transform = Transform3D(0.997307, 0.0603557, 0.0416703, -0.0603557, 0.352577, 0.933834, 0.0416703, -0.933834, 0.35527, -0.0938222, -0.0935769, -0.00897563)
+
+[node name="1_SHIN_R_001" parent="CarBodyCenter/clown/0_BODY_001/1_LEG_R_001" index="0"]
+transform = Transform3D(0.996889, -0.0624129, 0.0481316, 0.0624129, 0.252188, -0.965663, 0.0481316, 0.965663, 0.255298, -0.0537913, -0.516662, 0.0728368)
+
+[node name="2_ARM_L_001" parent="CarBodyCenter/clown/0_BODY_001" index="5"]
+transform = Transform3D(0.782608, 0, 0.622515, 0, 1, 0, -0.622515, 0, 0.782608, -0.150616, 0.260129, 0.0695237)
+
+[node name="2_FOREARM_L_001" parent="CarBodyCenter/clown/0_BODY_001/2_ARM_L_001" index="0"]
+transform = Transform3D(-0.0610311, 0, 0.998136, 0, 1, 0, -0.998136, 0, -0.0610311, -0.252343, -0.0852067, -0.0879765)
+
+[node name="2_LEG_L_001" parent="CarBodyCenter/clown/0_BODY_001" index="6"]
+transform = Transform3D(0.997736, 0.0574078, 0.0350259, -0.0574078, 0.455809, 0.888224, 0.0350259, -0.888224, 0.458073, 0.102022, -0.0912172, -0.00903547)
+
+[node name="2_SHIN_L_001" parent="CarBodyCenter/clown/0_BODY_001/2_LEG_L_001" index="0"]
+transform = Transform3D(0.998419, -0.0506092, 0.0244635, 0.0506092, 0.619916, -0.783034, 0.0244634, 0.783035, 0.621497, 0.0500298, -0.516662, 0.0724792)
+
+[node name="CLOWN_HEAD" parent="CarBodyCenter/clown/0_BODY_001" index="7"]
+material_override = ExtResource("6_h6c1u")
+
+[node name="4_HAT_BOWLER" parent="CarBodyCenter/clown/0_BODY_001/CLOWN_HEAD" index="0"]
+visible = false
+
+[node name="4_HAT_CONE" parent="CarBodyCenter/clown/0_BODY_001/CLOWN_HEAD" index="1"]
+visible = false
+
+[node name="5_HAIR_1" parent="CarBodyCenter/clown/0_BODY_001/CLOWN_HEAD" index="2"]
+visible = false
+
+[node name="5_HAIR_2" parent="CarBodyCenter/clown/0_BODY_001/CLOWN_HEAD" index="3"]
+visible = false
+
+[node name="clowncar" parent="CarBodyCenter" instance=ExtResource("3_jdr88")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CarBodyCenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801028, -0.631022, 3.66688)
+material_override = SubResource("StandardMaterial3D_k8kpn")
+amount = 100
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_hqxxv")
+draw_pass_1 = SubResource("SphereMesh_hvxy3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CarBodyCenter"]
+transform = Transform3D(0.988738, -0.0868973, 1.09942e-09, 0.146881, 0.563462, 0.191683, -0.0286865, -0.110046, 0.981457, -0.0804444, -0.0689481, 3.40374)
+mesh = SubResource("QuadMesh_tmlk5")
+surface_material_override/0 = SubResource("StandardMaterial3D_x4hjs")
+
+[node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("5_fdmgj")]
+target = NodePath("../Ball")
+look_target = NodePath("../Ball")
+
+[editable path="CarBodyCenter/clown"]
+[editable path="CarBodyCenter/clowncar"]
