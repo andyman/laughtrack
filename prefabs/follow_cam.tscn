@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd3dd5vku0ubt"]
+[gd_scene load_steps=2 format=3 uid="uid://c8qsfheaqenhd"]
 
 [ext_resource type="Script" path="res://scripts/follow_cam.gd" id="1_lrdqe"]
 

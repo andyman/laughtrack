@@ -11,6 +11,8 @@ class_name SphereCar
 @export var angular_damp_on_ground : float = 5.0
 @export var angular_damp_in_air : float = 0.0
 
+@export var started = false
+
 var speed_input = 0
 var turn_input = 0
 var enable_ray = false
@@ -20,6 +22,10 @@ var enable_ray = false
 @onready var ground_ray = $clowncar/RayCast3D
 @onready var right_wheel = $clowncar/clowncar3/Wheel_FR
 @onready var left_wheel = $clowncar/clowncar3/Wheel_FL
+
+func _on_countdown_startinggunfired():
+	started = true
+	pass
 
 #func _ready():
 #	ground_ray.add_exception(self)
@@ -33,7 +39,8 @@ func _physics_process(delta):
 		angular_damp = angular_damp_in_air
 	
 func _process(delta):
-
+	if not started:
+		return
 	if not ground_ray.is_colliding():
 		return
 	speed_input = Input.get_axis("brake","accelerate") * acceleration
