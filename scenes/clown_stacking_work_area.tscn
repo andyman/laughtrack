@@ -252,6 +252,336 @@ trigger_area = NodePath("../Clown/Area3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 211.896)
 trigger_area = NodePath("../Clown/Area3D")
 
+[node name="Clown6" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 17.8094)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown7" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 40.1674)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown8" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 71.6514)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown9" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 104.705)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown10" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 104.705)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown11" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 135.33)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown12" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 157.688)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown13" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 189.172)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown14" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 222.226)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown15" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 222.226)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown16" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 28.1393)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown17" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 50.4973)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown18" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 81.9813)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown19" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 115.035)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown20" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11619, 2.30783, 115.035)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown21" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 145.318)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown22" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 167.676)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown23" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 199.16)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown24" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 232.214)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown25" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 232.214)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown26" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 38.1269)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown27" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 60.4849)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown28" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 91.9689)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown29" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 125.023)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown30" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79893, 2.30783, 125.023)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown31" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 135.837)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown32" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 158.195)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown33" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 189.679)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown34" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 222.733)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown35" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 222.733)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown36" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 28.6461)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown37" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 51.0041)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown38" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 82.4881)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown39" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 115.542)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown40" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11739, 2.30783, 115.542)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown41" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 135.837)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown42" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 158.195)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown43" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 189.679)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown44" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 222.733)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown45" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 222.733)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown46" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 28.6461)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown47" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 51.0041)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown48" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 82.4881)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown49" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 115.542)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown50" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 115.542)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown51" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 135.837)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown52" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 158.195)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown53" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 189.679)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown54" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 222.733)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown55" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 222.733)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown56" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 28.6461)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown57" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 51.0041)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown2/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown58" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 82.4881)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown3/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown59" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 115.542)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown4/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
+[node name="Clown60" parent="." node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.152, 2.30783, 115.542)
+trigger_area = NodePath("../Clown/Area3D")
+head_gear = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("../Clown5/LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
+
 [node name="SphereCar" parent="." instance=ExtResource("21_1sxly")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.89468, 0)
 started = true

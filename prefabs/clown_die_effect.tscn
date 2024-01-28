@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://d4kd4yr16odmy"]
+
+[ext_resource type="AudioStream" uid="uid://o87cbf22r3gq" path="res://audio/effects/458572__facklere__bonk.wav" id="1_nmakp"]
+
+[sub_resource type="Curve" id="Curve_0y27i"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7e3xw"]
+curve = SubResource("Curve_0y27i")
+
+[sub_resource type="Gradient" id="Gradient_ckvw6"]
+offsets = PackedFloat32Array(0, 0.164, 0.384, 0.638, 0.822, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.818, 0.16, 1, 0.38, 1, 0.400667, 1, 0.64, 0.988, 1, 1, 0.955, 0.82, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wv6hs"]
+gradient = SubResource("Gradient_ckvw6")
+
+[sub_resource type="Curve" id="Curve_bjvsq"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_y13ky"]
+curve = SubResource("Curve_bjvsq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o8nub"]
+emission_shape_scale = Vector3(2, 2, 2)
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_y13ky")
+color_initial_ramp = SubResource("GradientTexture1D_wv6hs")
+alpha_curve = SubResource("CurveTexture_7e3xw")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkgpq"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_ceifk"]
+material = SubResource("StandardMaterial3D_hkgpq")
+
+[node name="ClownDieEffect" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.5957, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_nmakp")
+max_db = -12.0
+autoplay = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0154254, 1.60485, 0.670485)
+amount = 100
+lifetime = 2.0
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_o8nub")
+draw_pass_1 = SubResource("SphereMesh_ceifk")

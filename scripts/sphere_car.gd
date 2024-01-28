@@ -52,7 +52,7 @@ func _process(delta):
 
 	
 	if linear_velocity.length() > turn_stop_limit:
-		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input)
+		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y.normalized(), turn_input)
 		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
 		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
 		var t = -turn_input * linear_velocity.length() / body_tilt

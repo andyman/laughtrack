@@ -1,13 +1,12 @@
 extends RigidBody3D
 class_name Clown
 
-# TODO: getting clown hit by car (layer 2)
-# TODO: after clown hit, passing through car and flung up into the air for the cursor, time slows down. Make clown not collide with car or other clowns for the moment
-# TODO: clown rotates around the cursor until left click
-# TODO: clown is fired towards the car when left click happens - set the collision interactions so that it interacts with clowns and real car
-# TODO: when fired clown hits car or other clown, then it sticks onto them with a joint. If it hits ground, it dies
-# TODO: clown loosening
-# TODO: clown ragdolling
+# x: getting clown hit by car (layer 2)
+# x: after clown hit, passing through car and flung up into the air for the cursor, time slows down. Make clown not collide with car or other clowns for the moment
+# x: clown rotates around the cursor until left click
+# x: clown is fired towards the car when left click happens - set the collision interactions so that it interacts with clowns and real car
+# x: when fired clown hits car or other clown, then it sticks onto them with a joint. If it hits ground, it dies
+# TODO: clown dying
 
 enum ClownState {PEDESTRIAN, FLYING, FIRED, CLINGING, DEAD}
 
@@ -106,6 +105,9 @@ func _fire_clown(direction : Vector3):
 	
 	
 func _update_layers():
+	if (trigger_area == null): 
+		return
+		
 	match state:
 		ClownState.PEDESTRIAN: # get hit by clown car
 			trigger_area.collision_mask = pedestrian_mask
@@ -181,10 +183,20 @@ func _clinging_hit(body):
 
 	# TODO
 	pass
-	
+
 func _delayed_death():
-	#TODO
-	pass
+	print("death start")
+	var effect_prefab = load("res://prefabs/clown_die_effect.tscn")
+	var effect : Node3D = effect_prefab.instantiate()
+	get_tree().root.add_child(effect)
+	effect.global_position = global_position
+	effect.global_rotation = global_rotation
+	
+	
+	await get_tree().create_timer(2.0).timeout
+	print("death end")
+	effect.queue_free()
+	queue_free()
 
 func _on_area3d_body_entered(body):
 	match state:
