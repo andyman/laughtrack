@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://due7e4irws21g"]
+[gd_scene load_steps=8 format=3 uid="uid://due7e4irws21g"]
 
 [ext_resource type="Script" path="res://scripts/sphere_car.gd" id="1_k4426"]
 [ext_resource type="Texture2D" uid="uid://ca3in2yhondvk" path="res://artwork/car/texture_09.png" id="2_arhhj"]
 [ext_resource type="PackedScene" uid="uid://c4o37mcm0t07v" path="res://prefabs/clowncar.tscn" id="3_00ejc"]
-[ext_resource type="PackedScene" uid="uid://bgqh5gg4j6j45" path="res://prefabs/clown_stack.tscn" id="4_kiwi0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pcc34"]
 bounce = 0.1
@@ -29,6 +28,7 @@ angular_damp = 5.0
 script = ExtResource("1_k4426")
 sphere_offset = Vector3(0, -0.7, 0)
 acceleration = 5000.0
+turn_stop_limit = 0.1
 body_mesh = NodePath("clowncar")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -39,12 +39,12 @@ visible = false
 mesh = SubResource("SphereMesh_rl0nl")
 
 [node name="clowncar" parent="." instance=ExtResource("3_00ejc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 top_level = true
 
 [node name="RayCast3D" type="RayCast3D" parent="clowncar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326593, 0)
 target_position = Vector3(0, -2.5, 0)
 
-[node name="Node3D" type="Node3D" parent="clowncar"]
-
-[node name="ClownStack" parent="clowncar/Node3D" instance=ExtResource("4_kiwi0")]
+[node name="CarBodyCenter" type="Node3D" parent="clowncar"]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)

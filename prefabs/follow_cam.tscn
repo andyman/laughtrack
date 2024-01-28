@@ -7,5 +7,5 @@ script = ExtResource("1_lrdqe")
 follow_smoothing_lerp = Vector3(20, 5, 20)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 5.32907e-15, 8.74227e-08, 4.36757e-08, 0.866261, 0.499592, -7.57309e-08, 0.499592, -0.866261, 0.001, 10, -10)
+transform = Transform3D(-1, 5.32907e-15, 8.74227e-08, 4.36757e-08, 0.866261, 0.499592, -7.57309e-08, 0.499592, -0.866261, 0.001, 5, -5)
 far = 1000.0

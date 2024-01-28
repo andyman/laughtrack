@@ -12,11 +12,20 @@ var base_acceleration : float
 func _ready():
 	base_acceleration = sphere_car.acceleration
 	_update_car_stats()
+	_follow()
+		
+func _follow():
+	global_transform = sphere_car.body_mesh.global_transform
+	global_rotation = sphere_car.body_mesh.global_rotation
 	
+func _physics_process(delta):
+	_follow()
+
 func _update_car_stats():
 	sphere_car.acceleration = base_acceleration +  acceleration_bonus_per_clown * clown_count
 	
 func _process(delta):
+	_follow()
 	_update_car_stats()
 	
 	

@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgqh5gg4j6j45"]
+[gd_scene load_steps=9 format=3 uid="uid://bgqh5gg4j6j45"]
+
+[ext_resource type="Script" path="res://scripts/clown_stack.gd" id="1_clc30"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_je7kf"]
 size = Vector3(4.26903, 0.55011, 2.70178)
@@ -17,9 +19,13 @@ size = Vector3(2.01749, 0.55011, 0.496521)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3vsp7"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bcxw"]
+albedo_color = Color(1, 0, 0, 1)
+
 [node name="ClownStack" type="StaticBody3D"]
 collision_layer = 4
 collision_mask = 8
+script = ExtResource("1_clc30")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, -0.239058, 0.0267563)
@@ -48,3 +54,4 @@ shape = SubResource("BoxShape3D_whikf")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46521, 0)
 mesh = SubResource("BoxMesh_3vsp7")
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcxw")

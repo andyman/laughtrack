@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://slowi616cm46"]
+[gd_scene load_steps=29 format=3 uid="uid://slowi616cm46"]
 
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_0q6rr"]
 [ext_resource type="PackedScene" uid="uid://dd3dd5vku0ubt" path="res://prefabs/follow_cam.tscn" id="3_wv6mm"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cyjcp3fq1jcbh" path="res://prefabs/racetrack/road_straight_long_bump.tscn" id="19_3yfjg"]
 [ext_resource type="PackedScene" uid="uid://hskw3ct7xdqq" path="res://prefabs/racetrack/road_corner_large.tscn" id="20_kvvcs"]
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="21_1sxly"]
+[ext_resource type="PackedScene" uid="uid://bgqh5gg4j6j45" path="res://prefabs/clown_stack.tscn" id="21_htety"]
 [ext_resource type="PackedScene" uid="uid://qj41nisi3cwa" path="res://scenes/clown.tscn" id="21_v72g5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
@@ -235,8 +236,27 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 25,
 [node name="Clown" parent="." instance=ExtResource("21_v72g5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 125)
 
+[node name="Clown2" parent="." node_paths=PackedStringArray("trigger_area") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 147.358)
+trigger_area = NodePath("../Clown/Area3D")
+
+[node name="Clown3" parent="." node_paths=PackedStringArray("trigger_area") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 178.842)
+trigger_area = NodePath("../Clown/Area3D")
+
+[node name="Clown4" parent="." node_paths=PackedStringArray("trigger_area") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 211.896)
+trigger_area = NodePath("../Clown/Area3D")
+
+[node name="Clown5" parent="." node_paths=PackedStringArray("trigger_area") instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 211.896)
+trigger_area = NodePath("../Clown/Area3D")
+
 [node name="SphereCar" parent="." instance=ExtResource("21_1sxly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.45657, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.89468, 0)
+
+[node name="ClownStack" parent="." node_paths=PackedStringArray("sphere_car") instance=ExtResource("21_htety")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+sphere_car = NodePath("../SphereCar")
 
 [editable path="roadStraightLong"]
-[editable path="SphereCar"]

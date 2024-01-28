@@ -14,6 +14,8 @@ enum ClownState {PEDESTRIAN, FLYING, FIRED, CLINGING, DEAD}
 ## whether the clown has been hit by the car yet
 @export var state : ClownState = ClownState.PEDESTRIAN
 @export var trigger_area : Area3D
+@export var clinging_onto : Node3D = null
+
 @export_flags_3d_physics var pedestrian_mask
 @export_flags_3d_physics var flying_mask
 @export_flags_3d_physics var fired_mask
@@ -28,6 +30,7 @@ const LAUNCH_SPEED : float = 100.0
 
 var cam : Camera3D
 var circle_time : float = 0.0
+var anchor : Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,9 +41,27 @@ func _process(delta):
 	match state:
 		ClownState.FLYING:
 			_process_flying(delta)
+		ClownState.CLINGING:
+			_cling()
 	
+func _cling():
+	if (state == ClownState.CLINGING && clinging_onto != null):
+		global_position = clinging_onto.global_position
+		global_rotation = clinging_onto.global_rotation
+	
+func _process_physics(delta):
+	if (state == ClownState.CLINGING):
+		_cling()
 
+
+func _integrate_physics(s):
+	if (state == ClownState.CLINGING):
+		_cling()
+	
 func _process_flying(delta):
+	if (state != ClownState.FLYING):
+		return
+		
 	if cam == null:
 		cam = get_viewport().get_camera_3d()
 	
@@ -80,61 +101,74 @@ func _update_layers():
 			trigger_area.collision_mask = dead_mask
 	
 func _pedestrian_hit(body):
-	print("pedestrian hit")
-	state = ClownState.FLYING
-	_update_layers()
+	if (body is SphereCar or body is ClownStack):		
+		print("pedestrian hit by: ", body.name)
+		state = ClownState.FLYING
+		_update_layers()
 	
 func _fired_clown_hit(body):
 	
 	if (state != ClownState.FIRED):
 		return
 		
-	print("Collision layer: ", body.collision_layer)
+	print("Collision layer: ", body.collision_layer,  " ", body.name)
 	
+	var layer = body.collision_layer
+	
+	
+	if (layer == 4):
+		state = ClownState.CLINGING
+		print("** Cling onto clownstack: ", body.name)
+		_cling_onto(body)
+		
+		
+	elif (layer == 8):
+		var otherClown = body as Clown
+		if (otherClown.state == ClownState.CLINGING):
+			print("** Cling onto clinging clown: ", body.name)
+			state = ClownState.CLINGING
+			_cling_onto(body)
+		else:
+			print("skipping other clown since it is not clinging")
+			
 	# ground
-	if body.collision_layer == 1:
+	elif layer == 1:
 		print("* ground hit: ", body.name)
 		state = ClownState.DEAD
 		_delayed_death()
-		
-	elif body.collision_layer == 8:
-		print("* car hit: ", body.name)
-		state = ClownState.CLINGING
-		_cling_onto(body)
-		
-	elif body.collision_layer == 16:
-		print("* clown hit: ", body.name)
-		var otherClown = body as Clown
-		if (otherClown.state == ClownState.CLINGING):
-			state = ClownState.CLINGING
-			_cling_onto(body)
-		
+
 	
 	_update_layers()
 	
+const JOINT_BIAS_STRENGTH : float = 1000
+const JOINT_DAMPING_STRENGTH : float = 100
+
 func _cling_onto(body : PhysicsBody3D):
-	var joint : PinJoint3D = PinJoint3D.new()
-	joint.node_a = body.get_path()
-	joint.node_b = get_path()
+	var anchor : Node3D = Node3D.new()
+	anchor.global_position = global_position
+	anchor.global_rotation = global_rotation
+	body.add_child(anchor)
+	clinging_onto = anchor	
 	
-	add_child(joint)
+	#var joint : PinJoint3D = PinJoint3D.new()
+	#joint.node_a = body.get_path()
+	#joint.node_b = get_path()
+	#joint.set_param(PinJoint3D.PARAM_BIAS, JOINT_BIAS_STRENGTH)
+	#joint.set_param(PinJoint3D.PARAM_DAMPING, JOINT_DAMPING_STRENGTH)
+#
+	#add_child(joint)
 	
 	
 func _clinging_hit(body):
-	print("Cling onto " + body.name)
+
 	# TODO
 	pass
 	
 func _delayed_death():
 	#TODO
 	pass
-	
-func _on_body_entered(body):
-	print("Body entered " + body.name)
-	
 
 func _on_area3d_body_entered(body):
-	print("Body entered " + body.name)
 	match state:
 		ClownState.PEDESTRIAN: # get hit by clown car
 			_pedestrian_hit(body)
