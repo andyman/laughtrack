@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://due7e4irws21g"]
+
+[ext_resource type="Script" path="res://prefabs/sphere_car.gd" id="1_k4426"]
+[ext_resource type="PackedScene" uid="uid://c3cbb6ddjy4ys" path="res://artwork/car/clowncar3.glb" id="2_pvvu8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_udv5s"]
+radius = 1.0
+
+[node name="SphereCar" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_k4426")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_udv5s")
+
+[node name="clowncar" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137284, 1.0791, 0.753488)
+
+[node name="clowncar2" parent="clowncar" instance=ExtResource("2_pvvu8")]
+
+[node name="RayCast3D" type="RayCast3D" parent="clowncar"]

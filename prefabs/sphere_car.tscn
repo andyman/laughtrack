@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://due7e4irws21g"]
+
+[ext_resource type="Script" path="res://scripts/sphere_car.gd" id="1_k4426"]
+[ext_resource type="Texture2D" uid="uid://ca3in2yhondvk" path="res://artwork/car/texture_09.png" id="2_arhhj"]
+[ext_resource type="PackedScene" path="res://prefabs/clowncar.tscn" id="3_00ejc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pcc34"]
+bounce = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_udv5s"]
+radius = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30vc2"]
+transparency = 1
+albedo_texture = ExtResource("2_arhhj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rl0nl"]
+material = SubResource("StandardMaterial3D_30vc2")
+radius = 2.0
+height = 4.0
+
+[node name="SphereCar" type="RigidBody3D"]
+collision_layer = 2
+mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_pcc34")
+gravity_scale = 10.0
+angular_damp = 5.0
+script = ExtResource("1_k4426")
+sphere_offset = Vector3(0, -0.7, 0)
+acceleration = 8000.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_udv5s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+visible = false
+mesh = SubResource("SphereMesh_rl0nl")
+
+[node name="clowncar" parent="." instance=ExtResource("3_00ejc")]
+top_level = true
+
+[node name="RayCast3D" type="RayCast3D" parent="clowncar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326593, 0)
+target_position = Vector3(0, -2.5, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://cqt5gjmcw68bv"]
 
-[ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_in7s4"]
+[ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="1_3hbqr"]
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_52rg1"]
 [ext_resource type="PackedScene" uid="uid://dd3dd5vku0ubt" path="res://prefabs/follow_cam.tscn" id="2_lw8ue"]
 [ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="3_i0a70"]
@@ -43,15 +43,15 @@ size = Vector3(10000, 10, 10000)
 
 [node name="main_scene" type="Node3D"]
 
+[node name="SphereCar" parent="." instance=ExtResource("1_3hbqr")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 4.11102, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vv68l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Car" parent="." instance=ExtResource("1_in7s4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -65,8 +65,10 @@ mesh = SubResource("BoxMesh_3t0yu")
 surface_material_override/0 = ExtResource("2_52rg1")
 
 [node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("2_lw8ue")]
-target = NodePath("../Car")
-look_target = NodePath("../Car")
+target = NodePath("../SphereCar")
+look_target = NodePath(".")
+pitch = 0.0
+pitch_speed = 0.25
 
 [node name="EscapeToQuit" parent="." instance=ExtResource("3_i0a70")]
 

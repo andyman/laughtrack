@@ -11,18 +11,18 @@ size = Vector3(2.66113, 0.931641, 4.45203)
 mass = 100.0
 center_of_mass_mode = 1
 script = ExtResource("1_s50ls")
-steer_strength = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548448, 0.0629272)
 shape = SubResource("BoxShape3D_ujjs4")
 
 [node name="Clowncar_Body" parent="." instance=ExtResource("4_vcxg5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.529459, -1.42111)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.529, 0.0686107)
 
 [node name="RearLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20743, 0.0805613, -1.37048)
 use_as_traction = true
+wheel_roll_influence = -1.0
 wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
@@ -35,6 +35,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="RearRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.207, 0.081, -1.37021)
 use_as_traction = true
+wheel_roll_influence = -1.0
 wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
@@ -48,6 +49,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.207, 0.081, 1.4318)
 use_as_traction = true
 use_as_steering = true
+wheel_roll_influence = -1.0
 wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
@@ -61,6 +63,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.207, 0.081, 1.4318)
 use_as_traction = true
 use_as_steering = true
+wheel_roll_influence = -1.0
 wheel_radius = 0.363
 wheel_rest_length = 0.2
 suspension_travel = 0.1
@@ -69,3 +72,5 @@ damping_compression = 0.5
 
 [node name="Clowncar_wheel" parent="FrontLeft2" instance=ExtResource("3_7k7lp")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="."]

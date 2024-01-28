@@ -3,39 +3,32 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1a4hn3fgfyaw"
-path="res://.godot/imported/roadStraightBridge.glb-f171ed6d6e2725b5ee44ea893e688e23.scn"
+uid="uid://c3cbb6ddjy4ys"
+path="res://.godot/imported/clowncar3.glb-1e41f18d46b286ce6e1bd2f01d4b3dff.scn"
 
 [deps]
 
-source_file="res://artwork/racetrack/GLTF format/roadStraightBridge.glb"
-dest_files=["res://.godot/imported/roadStraightBridge.glb-f171ed6d6e2725b5ee44ea893e688e23.scn"]
+source_file="res://artwork/car/clowncar3.glb"
+dest_files=["res://.godot/imported/clowncar3.glb-1e41f18d46b286ce6e1bd2f01d4b3dff.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=50.0
+nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
-skins/use_named_skins=false
-animation/import=false
+skins/use_named_skins=true
+animation/import=true
 animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:roadStraightBridge(Clone)": {
-"generate/physics": true,
-"physics/shape_type": 2
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

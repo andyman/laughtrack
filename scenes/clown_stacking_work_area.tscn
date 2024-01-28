@@ -233,7 +233,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 25,
 
 [node name="Clown" parent="." instance=ExtResource("21_v72g5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 125)
-state = 0
 
 [editable path="Car"]
 [editable path="roadStraightLong"]
