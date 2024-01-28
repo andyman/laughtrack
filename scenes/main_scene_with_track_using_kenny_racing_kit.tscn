@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_in7s4"]
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_52rg1"]
-[ext_resource type="PackedScene" path="res://prefabs/follow_cam.tscn" id="2_lw8ue"]
+[ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="2_lw8ue"]
 [ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="3_i0a70"]
 [ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="4_je8bp"]
 [ext_resource type="PackedScene" uid="uid://dkfjx0isftumy" path="res://artwork/racetrack/GLTF format/roadStraightLong.glb" id="5_uyp22"]
