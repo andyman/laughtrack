@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=3 uid="uid://dawgdax5wtcwx"]
+
+[ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="1_bati4"]
+[ext_resource type="PackedScene" uid="uid://c3cbb6ddjy4ys" path="res://artwork/car/clowncar3.glb" id="2_x8dvv"]
+[ext_resource type="Theme" uid="uid://csmql14t37xar" path="res://UI/hud.tres" id="3_28ljp"]
+[ext_resource type="Script" path="res://scenes/StartButton.gd" id="4_c32hg"]
+[ext_resource type="Script" path="res://scenes/QuitButton.gd" id="4_tdc1b"]
+[ext_resource type="Script" path="res://scenes/SettingsButton.gd" id="5_00ytd"]
+[ext_resource type="AudioStream" uid="uid://dc0c5nsj08kvy" path="res://audio/effects/DMoshgoofy_statement.wav" id="6_yflig"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yysij"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tjij1"]
+sky_material = SubResource("ProceduralSkyMaterial_yysij")
+
+[sub_resource type="Environment" id="Environment_2mtmx"]
+background_mode = 2
+sky = SubResource("Sky_tjij1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.902961, -0.0305895, 0.428633, 6.22309e-09, 0.997463, 0.0711842, -0.429723, 0.0642765, -0.90067, 3.48799, 6.31085, -9.71608)
+far = 1000.0
+
+[node name="clown" parent="." instance=ExtResource("1_bati4")]
+transform = Transform3D(-0.330086, -0.00169693, 0.943949, -0.494463, 0.852137, -0.171375, -0.804083, -0.523316, -0.282118, 1.36836, 6.28973, -6.55613)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2mtmx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="clowncar3" parent="." instance=ExtResource("2_x8dvv")]
+transform = Transform3D(0.52832, 0, -0.849045, 0.522117, 0.788569, 0.324888, 0.669531, -0.614946, 0.416617, 0.922692, 5.40517, -5.11298)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.208
+anchor_right = 0.792
+anchor_bottom = 0.309
+offset_left = 289.384
+offset_top = 74.0
+offset_right = -289.384
+offset_bottom = -103.232
+grow_horizontal = 2
+theme = ExtResource("3_28ljp")
+theme_override_font_sizes/font_size = 128
+text = "Laugh Track"
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.359
+anchor_top = 0.5
+anchor_right = 0.641
+anchor_bottom = 1.0
+offset_left = -0.568024
+offset_right = 0.567993
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_28ljp")
+
+[node name="StartButton" type="Button" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 2
+theme = ExtResource("3_28ljp")
+text = "Start Game"
+script = ExtResource("4_c32hg")
+
+[node name="Container" type="Container" parent="CanvasLayer/MainMenuButtons"]
+custom_minimum_size = Vector2(0, 10.17)
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 2
+theme = ExtResource("3_28ljp")
+text = "Settings"
+script = ExtResource("5_00ytd")
+
+[node name="settingsound" type="AudioStreamPlayer" parent="CanvasLayer/MainMenuButtons/SettingsButton"]
+stream = ExtResource("6_yflig")
+
+[node name="Container2" type="Container" parent="CanvasLayer/MainMenuButtons"]
+custom_minimum_size = Vector2(0, 10.17)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 2
+theme = ExtResource("3_28ljp")
+text = "Quit"
+script = ExtResource("4_tdc1b")
+
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/StartButton" to="CanvasLayer/MainMenuButtons/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/SettingsButton" to="CanvasLayer/MainMenuButtons/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/QuitButton" to="CanvasLayer/MainMenuButtons/QuitButton" method="_on_pressed"]
