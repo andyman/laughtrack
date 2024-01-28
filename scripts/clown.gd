@@ -20,14 +20,38 @@ enum ClownState {PEDESTRIAN, FLYING, FIRED, CLINGING, DEAD}
 @export_flags_3d_physics var clinging_mask
 @export_flags_3d_physics var dead_mask
 
+const DIST_FROM_CAM : float= -5.0
+const SPIN_RATE : float = 2.0
+const SPIN_LERP_RATE : float = 20.0
+const SPIN_RADIUS : float = 0.5
+var cam : Camera3D
+var circle_time : float = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_update_layers()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	match state:
+		ClownState.FLYING:
+			_process_flying(delta)
+	
 
+func _process_flying(delta):
+	if cam == null:
+		cam = get_viewport().get_camera_3d()
+	
+	if (cam == null):
+		return
+		
+	circle_time += delta
+	
+	var rads = circle_time * TAU * SPIN_RATE
+	var target_pos = cam.global_position + cam.global_basis.z * DIST_FROM_CAM + cam.global_basis.x * SPIN_RADIUS * cos(rads) + cam.global_basis.y * SPIN_RADIUS * sin(rads)
+	global_position = global_position.lerp(target_pos, delta * SPIN_LERP_RATE)
+	
+	
 func _update_layers():
 	match state:
 		ClownState.PEDESTRIAN: # get hit by clown car
