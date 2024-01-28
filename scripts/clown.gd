@@ -16,6 +16,9 @@ enum ClownState {PEDESTRIAN, FLYING, FIRED, CLINGING, DEAD}
 @export var trigger_area : Area3D
 @export var clinging_onto : Node3D = null
 
+@export var head_gear : Array[Node3D] = [] 
+@export var neck_accessories : Array[Node3D] = [] 
+
 @export_flags_3d_physics var pedestrian_mask
 @export_flags_3d_physics var flying_mask
 @export_flags_3d_physics var fired_mask
@@ -37,8 +40,13 @@ var anchor : Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_randomize_accessories()
 	_update_layers()
 
+func _randomize_accessories():
+	head_gear.pick_random().visible = true
+	neck_accessories.pick_random().visible = true
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	match state:
@@ -46,6 +54,7 @@ func _process(delta):
 			_process_flying(delta)
 		ClownState.CLINGING:
 			_cling()
+
 	
 func _cling():
 	if (state == ClownState.CLINGING && clinging_onto != null):
@@ -53,13 +62,19 @@ func _cling():
 		global_rotation = clinging_onto.global_rotation
 	
 func _process_physics(delta):
-	if (state == ClownState.CLINGING):
-		_cling()
+	#if (state == ClownState.CLINGING):
+		#var v : Vector3 = linear_velocity
+		#var diff : Vector3 = clinging_onto.global_position - global_position
+		#var target_v :Vector3 = diff / delta
+		#var v_diff = target_v - v
+		#apply_central_impulse(v_diff * mass)
+	_cling()
 
 
 func _integrate_physics(s):
 	if (state == ClownState.CLINGING):
 		_cling()
+		pass
 	
 func _process_flying(delta):
 	if (state != ClownState.FLYING):
@@ -124,7 +139,7 @@ func _fired_clown_hit(body):
 		_cling_onto(body)
 		
 		
-	elif (layer == 8):
+	if (layer == 8):
 		var otherClown = body as Clown
 		if (otherClown.state == ClownState.CLINGING):
 			print("** Cling onto clinging clown: ", body.name)
@@ -134,7 +149,7 @@ func _fired_clown_hit(body):
 			print("skipping other clown since it is not clinging")
 			
 	# ground
-	elif layer == 1:
+	if layer == 1:
 		print("* ground hit: ", body.name)
 		state = ClownState.DEAD
 		_delayed_death()
@@ -147,7 +162,7 @@ func _cling_onto(body : PhysicsBody3D):
 	var anchor : Node3D = Node3D.new()
 	body.add_child(anchor)
 	
-	anchor.global_position = global_position.lerp(body.global_position, 0.25)
+	anchor.global_position = global_position.lerp(body.global_position, 0.5)
 	
 	anchor.global_rotation = global_rotation
 

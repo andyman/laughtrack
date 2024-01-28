@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://qj41nisi3cwa"]
+[gd_scene load_steps=22 format=3 uid="uid://qj41nisi3cwa"]
 
 [ext_resource type="Script" path="res://scripts/clown.gd" id="1_itpst"]
 [ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="2_qsujj"]
 [ext_resource type="Script" path="res://scripts/silly_joint.gd" id="3_aote5"]
+[ext_resource type="Material" uid="uid://donc5sg7ppb64" path="res://artwork/clowns/clown_material.tres" id="3_w0lb5"]
+[ext_resource type="Texture2D" uid="uid://bxkkhq7l24ket" path="res://artwork/clowns/CLOWN_FACE_TXTR_CLR.png" id="5_jlyh5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_210qw"]
 
@@ -12,6 +14,9 @@
 radius = 1.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_xmeul"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdap5"]
+albedo_texture = ExtResource("5_jlyh5")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bcdyi"]
 points = PackedVector3Array(0.268182, -0.206468, -0.181185, 0.323414, -0.105992, -0.169135, 0.348141, -0.150038, -0.0915014, 0.268182, -0.206468, 0.0887637, -0.0101166, -0.0419165, -0.0914221, 0.0102202, -0.00486489, -0.0869829, 0.0145727, 0.0483561, -0.0749071, 0.335234, 0.0384288, -0.136343, 0.372831, -0.0597654, -0.0749599, 0.368478, -0.113011, -0.0870357, 0.348141, -0.150038, 0.0080117, -0.0101166, -0.0419165, 0.00806454, 0.323414, -0.105992, 0.080123, 0.336172, 0.0418382, 0.057689, 0.0149104, 0.0496346, -0.00337709, 0.373206, -0.058512, -0.00345635, 0.368478, -0.113011, 0.00481437)
@@ -46,7 +51,7 @@ points = PackedVector3Array(0.185535, -0.586294, 0.0975667, -0.0784503, -0.60823
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwc3f"]
 points = PackedVector3Array(0.148374, -2.90424e-05, -3.70145e-05, 0.10489, -0.104919, -3.70145e-05, 0.0856315, -0.0856896, -0.0856793, 0.100649, -0.0210593, -0.100678, 0.10489, -2.90424e-05, -0.104953, 0.100417, 0.0222212, -0.100453, 0.0856315, 0.0856315, -0.0856793, 0.10489, 0.10489, -3.70145e-05, 0.0856315, 0.0856315, 0.0856428, 0.100417, 0.0222212, 0.100416, 0.10489, -2.90424e-05, 0.104879, 0.100649, -0.0210593, 0.100641, 0.0856315, -0.0856896, 0.0856428, -2.90424e-05, -0.148374, -3.70145e-05, 0.0275369, -0.099458, -0.0994781, -2.90424e-05, -2.90424e-05, -0.148374, 0.0275369, 0.099429, -0.0994781, -2.90424e-05, 0.148374, -3.70145e-05, 0.0275369, 0.099429, 0.0994415, -2.90424e-05, 0.0474052, 0.202595, 0.0262588, 0.044181, 0.190671, 0.0549575, -0.000755221, 0.20492, -2.90424e-05, -0.0419443, 0.211519, 0.0275369, -0.099458, 0.0994415, -0.0856896, -0.0856896, 0.0856428, -0.104919, -0.104919, -3.70145e-05, -0.0856896, -0.0856896, -0.0856793, -0.0275659, -0.099458, -0.0994781, -2.90424e-05, -0.104919, -0.104953, -2.90424e-05, -0.104919, 0.104879, -0.0275659, -0.099458, 0.0994415, -0.100678, -0.0210593, -0.100678, -0.104919, -2.90424e-05, -0.104953, -0.100446, 0.0222212, -0.100453, -0.0856896, 0.0856315, -0.0856793, -0.0275659, 0.099429, -0.0994781, -2.90424e-05, 0.10489, -0.104953, -0.104919, 0.10489, -3.70145e-05, -0.0856896, 0.0856315, 0.0856428, -0.0275659, 0.099429, 0.0994415, -2.90424e-05, 0.10489, 0.104879, -0.0262878, 0.044181, 0.190671, -2.90424e-05, -0.000755221, 0.234692, -0.0549866, -0.000755221, 0.20492, -0.148374, -2.90424e-05, -3.70145e-05, -0.100678, -0.0210593, 0.100641, -0.100446, 0.0222212, 0.100416, -0.104919, -2.90424e-05, 0.104879)
 
-[node name="Clown" type="RigidBody3D" node_paths=PackedStringArray("trigger_area")]
+[node name="Clown" type="RigidBody3D" node_paths=PackedStringArray("trigger_area", "head_gear", "neck_accessories")]
 collision_layer = 8
 collision_mask = 15
 mass = 0.01
@@ -55,6 +60,8 @@ center_of_mass = Vector3(0, -1, 0)
 contact_monitor = true
 script = ExtResource("1_itpst")
 trigger_area = NodePath("Area3D")
+head_gear = [NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001")]
+neck_accessories = [NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
 pedestrian_mask = 2
 flying_mask = 0
 fired_mask = 15
@@ -83,18 +90,33 @@ mesh = SubResource("SphereMesh_xmeul")
 [node name="LAUGH_TRACK_CLOWN_5" parent="." instance=ExtResource("2_qsujj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965227, 0)
 
+[node name="0_BODY_001" parent="LAUGH_TRACK_CLOWN_5" index="0"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="0_BOWTIE" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="0"]
+visible = false
+
+[node name="0_NECK TIE" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="1"]
+visible = false
+
+[node name="0_NECK_RUFFLE" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="2"]
+visible = false
+
 [node name="1_ARM_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="3" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+material_override = ExtResource("3_w0lb5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../CollisionShape3D3")
 clown_root = NodePath("../../..")
 
 [node name="1_FOREARM_L__001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_ARM_R_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239234, -0.0901225, -0.0917315)
+material_override = ExtResource("3_w0lb5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../../CollisionShape3D2")
 clown_root = NodePath("../../../..")
 
 [node name="1_LEG_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="4" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+material_override = ExtResource("3_w0lb5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../CollisionShape3D6")
 clown_root = NodePath("../../..")
@@ -110,16 +132,19 @@ physics_counterpart = NodePath("../../../../../CollisionShape3D4")
 clown_root = NodePath("../../../../..")
 
 [node name="2_ARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="5" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+material_override = ExtResource("3_w0lb5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../CollisionShape3D8")
 clown_root = NodePath("../../..")
 
 [node name="2_FOREARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_ARM_L_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+material_override = ExtResource("3_w0lb5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../../CollisionShape3D7")
 clown_root = NodePath("../../../..")
 
 [node name="2_LEG_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="6" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+material_override = ExtResource("3_w0lb5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../CollisionShape3D11")
 clown_root = NodePath("../../..")
@@ -135,9 +160,25 @@ physics_counterpart = NodePath("../../../../../CollisionShape3D9")
 clown_root = NodePath("../../../../..")
 
 [node name="CLOWN_HEAD" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="7" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+material_override = SubResource("StandardMaterial3D_kdap5")
 script = ExtResource("3_aote5")
 physics_counterpart = NodePath("../../../CollisionShape3D12")
 clown_root = NodePath("../../..")
+
+[node name="4_HAT_BOWLER" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="0"]
+visible = false
+
+[node name="4_HAT_CONE" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="1"]
+visible = false
+
+[node name="5_HAIR_1" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="2"]
+visible = false
+
+[node name="5_HAIR_2" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="3"]
+visible = false
+
+[node name="5_HAIR_2_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="4"]
+visible = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.386591, 0.445151, 0.0593215)

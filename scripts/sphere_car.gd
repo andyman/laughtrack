@@ -17,6 +17,8 @@ var speed_input = 0
 var turn_input = 0
 var enable_ray = false
 
+static var instance : SphereCar
+
 @onready var car_mesh = $clowncar
 @export var body_mesh : Node3D
 @onready var ground_ray = $clowncar/RayCast3D
