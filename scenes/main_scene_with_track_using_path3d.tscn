@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://k0un70bnu4vc"]
 
-[ext_resource type="PackedScene" path="res://prefabs/follow_cam.tscn" id="2_oiqb2"]
+[ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="2_oiqb2"]
 [ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="3_m3duj"]
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="4_0wusx"]
 [ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="4_1b0d3"]
@@ -26,7 +26,6 @@ size = Vector3(1000, 10, 1000)
 size = Vector3(1000, 10, 1000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keyrr"]
-transparency = 1
 albedo_color = Color(0.392157, 0.392157, 0.392157, 0.427451)
 
 [node name="main_scene" type="Node3D"]

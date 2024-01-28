@@ -1,12 +1,12 @@
 # From https://kidscancode.org/godot_recipes/4.x/3d/3d_sphere_car/
 extends RigidBody3D
 
-var sphere_offset = Vector3.DOWN*0.638
+var sphere_offset = Vector3.DOWN*(.35)
 var acceleration = 35.0
 var steering = 19.0
 var turn_speed = 4.0
 var turn_stop_limit = 0.75
-var body_tilt = 35
+var body_tilt = 170
 
 var speed_input = 0
 var turn_input = 0
