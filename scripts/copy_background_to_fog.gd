@@ -1,6 +1,5 @@
 extends WorldEnvironment
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_copy_background_to_fog()

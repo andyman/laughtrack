@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cyjcp3fq1jcbh" path="res://prefabs/racetrack/road_straight_long_bump.tscn" id="19_3yfjg"]
 [ext_resource type="PackedScene" uid="uid://hskw3ct7xdqq" path="res://prefabs/racetrack/road_corner_large.tscn" id="20_kvvcs"]
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="21_1sxly"]
-[ext_resource type="PackedScene" uid="uid://qj41nisi3cwa" path="res://scenes/clown.tscn" id="21_v72g5"]
+[ext_resource type="PackedScene" uid="uid://qj41nisi3cwa" path="res://prefabs/clown.tscn" id="21_v72g5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

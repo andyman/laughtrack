@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://due7e4irws21g"]
+[gd_scene load_steps=26 format=3 uid="uid://due7e4irws21g"]
 
 [ext_resource type="Script" path="res://scripts/sphere_car.gd" id="1_k4426"]
 [ext_resource type="Texture2D" uid="uid://ca3in2yhondvk" path="res://artwork/car/texture_09.png" id="2_arhhj"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtsdo511uuj6m" path="res://artwork/car/Clowncar_swheel.glb" id="5_oe3lw"]
 [ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="5_tn3si"]
 [ext_resource type="Material" uid="uid://ctntqthb4ge01" path="res://artwork/clowns/clown_face.tres" id="6_h6c1u"]
+[ext_resource type="Material" uid="uid://dd7jh5v782bdl" path="res://artwork/car/seatback_mat.tres" id="8_1gpff"]
 [ext_resource type="Texture2D" uid="uid://kudkpts5y0lw" path="res://artwork/car/Honkplate.png" id="8_l1pmy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_udv5s"]
@@ -21,6 +22,29 @@ albedo_texture = ExtResource("2_arhhj")
 material = SubResource("StandardMaterial3D_30vc2")
 radius = 3.0
 height = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xlcv"]
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svutd"]
+albedo_color = Color(0.34902, 0.34902, 0.34902, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q143v"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906403, 0.249325, 0.170474, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d312b"]
+resource_name = "Material.003"
+cull_mode = 2
+albedo_color = Color(0.411765, 0.411765, 0.411765, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8m6io"]
+albedo_color = Color(0.639216, 0.0745098, 0.168627, 1)
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8kpn"]
 shading_mode = 2
@@ -50,6 +74,7 @@ height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4hjs"]
 albedo_texture = ExtResource("8_l1pmy")
+metallic_specular = 0.0
 
 [node name="SphereCar" type="Node3D" node_paths=PackedStringArray("ball", "clown_stack", "follow_cam", "car_mesh", "body_mesh", "ground_ray", "right_wheel", "left_wheel")]
 script = ExtResource("1_k4426")
@@ -69,6 +94,8 @@ left_wheel = NodePath("CarBodyCenter/clowncar/Wheel_FL")
 collision_layer = 2
 mass = 100.0
 gravity_scale = 10.0
+max_contacts_reported = 1024
+contact_monitor = true
 angular_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
@@ -91,6 +118,12 @@ target_position = Vector3(0, -5, 0)
 
 [node name="Clowncar_swheel" parent="CarBodyCenter" instance=ExtResource("5_oe3lw")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -0.160697, 0, 2.5067)
+
+[node name="Steering_001" parent="CarBodyCenter/Clowncar_swheel" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1xlcv")
+
+[node name="Swheel" parent="CarBodyCenter/Clowncar_swheel/Steering_001" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_svutd")
 
 [node name="clown" parent="CarBodyCenter" instance=ExtResource("5_tn3si")]
 transform = Transform3D(-0.997918, 0, -0.0644974, 0, 1, 0, 0.0644974, 0, -0.997918, -0.600501, 1.14487, -0.723748)
@@ -143,6 +176,27 @@ visible = false
 [node name="clowncar" parent="CarBodyCenter" instance=ExtResource("3_jdr88")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
+[node name="Carbod" parent="CarBodyCenter/clowncar" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q143v")
+
+[node name="Back_Bunper" parent="CarBodyCenter/clowncar/Carbod" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_d312b")
+
+[node name="Dash" parent="CarBodyCenter/clowncar/Carbod" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8m6io")
+
+[node name="Seatback_001" parent="CarBodyCenter/clowncar/Carbod" index="2"]
+surface_material_override/0 = ExtResource("8_1gpff")
+
+[node name="Seatback_002" parent="CarBodyCenter/clowncar/Carbod" index="3"]
+surface_material_override/0 = ExtResource("8_1gpff")
+
+[node name="Seatback_003" parent="CarBodyCenter/clowncar/Carbod" index="4"]
+surface_material_override/0 = ExtResource("8_1gpff")
+
+[node name="Seatback_004" parent="CarBodyCenter/clowncar/Carbod" index="5"]
+surface_material_override/0 = ExtResource("8_1gpff")
+
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CarBodyCenter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.801028, -0.631022, 3.66688)
 material_override = SubResource("StandardMaterial3D_k8kpn")
@@ -160,5 +214,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x4hjs")
 target = NodePath("../Ball")
 look_target = NodePath("../Ball")
 
+[editable path="CarBodyCenter/Clowncar_swheel"]
 [editable path="CarBodyCenter/clown"]
 [editable path="CarBodyCenter/clowncar"]

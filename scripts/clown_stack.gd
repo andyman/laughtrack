@@ -1,7 +1,8 @@
 extends StaticBody3D
 class_name ClownStack
 ## follows the clowncar, this is the physics receiver for the clown car
-@export var acceleration_bonus_per_clown : float = 100.0
+## acceleration in multiplier
+@export var acceleration_bonus_per_clown : float = 0.1
 @export var sphere_car : SphereCar
 
 @export var clown_count : int = 0
@@ -34,7 +35,7 @@ func _physics_process(delta):
 	_follow()
 
 func _update_car_stats():
-	sphere_car.acceleration = base_acceleration +  acceleration_bonus_per_clown * clown_count
+	sphere_car.acceleration = base_acceleration * (1.0 + acceleration_bonus_per_clown * clown_count)
 	
 func _process(delta):
 	_follow()

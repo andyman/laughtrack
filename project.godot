@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Laugh Track"
-run/main_scene="res://scenes/UI_Test_main_scene_with_track_using_path3d.tscn"
+run/main_scene="res://scenes/laugh_track1.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -83,7 +83,3 @@ fire={
 3d_render/layer_2="CarDriving"
 3d_render/layer_3="CarStacking"
 3d_render/layer_4="Clown"
-
-[rendering]
-
-renderer/rendering_method="mobile"

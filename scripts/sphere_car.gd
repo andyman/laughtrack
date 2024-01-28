@@ -66,6 +66,11 @@ func _process(delta):
 		return
 		
 	speed_input = Input.get_axis("brake","accelerate") * acceleration
+	
+	# make it go up hills faster
+	if (ball.linear_velocity.y > 0.1):
+		speed_input *= 2.0
+		
 	turn_input = Input.get_axis("steer_right", "steer_left") * deg_to_rad(steering)
 	right_wheel.rotation.y = turn_input+deg_to_rad(90)
 	left_wheel.rotation.y = turn_input+deg_to_rad(90)

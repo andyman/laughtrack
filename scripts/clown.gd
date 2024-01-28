@@ -33,10 +33,13 @@ const LAUNCH_SPEED : float = 50.0
 const JOINT_BIAS_STRENGTH : float = 1000
 const JOINT_DAMPING_STRENGTH : float = 100
 const FAKE_JOINT_MAX_IMPULSE : float = 100
+const MAX_SPIN_TIME : float = 3.0
 
 var cam : Camera3D
 var circle_time : float = 0.0
 var anchor : Node3D
+var spin_time_left : float = 3.0
+var initial_position : Vector3
 
 static var clinging_clowns : Array[Clown] = []
 
@@ -53,6 +56,7 @@ static func count_clinging_clowns() -> int:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initial_position = global_position
 	_randomize_accessories()
 	_update_layers()
 
@@ -71,9 +75,9 @@ func _process(delta):
 		ClownState.CLINGING:
 			_cling()
 			if (clinging_onto != null):
-				clinging_onto.rotate_y(deg_to_rad(randf_range(-1.0, 1.0)) * delta)
-				clinging_onto.rotate_x(deg_to_rad(randf_range(-1.0, 1.0)) * delta)
-				clinging_onto.rotate_z(deg_to_rad(randf_range(-1.0, 1.0)) * delta)
+				clinging_onto.rotate_y(deg_to_rad(randf_range(-10.0, 10.0)) * delta)
+				clinging_onto.rotate_x(deg_to_rad(randf_range(-10.0, 10.0)) * delta)
+				clinging_onto.rotate_z(deg_to_rad(randf_range(-10.0, 10.0)) * delta)
 
 	
 func _cling():
@@ -109,6 +113,13 @@ func _process_flying(delta):
 		cam = get_viewport().get_camera_3d()
 	
 	if (cam == null):
+		return
+		
+	spin_time_left -= delta
+	if (spin_time_left <= 0.0):
+		state = ClownState.DEAD
+		_update_layers()
+		_delayed_death()
 		return
 		
 	# make clown circle around the camera
@@ -194,11 +205,12 @@ func _fired_clown_hit(body):
 func _cling_onto(body : PhysicsBody3D):
 	var anchor : Node3D = Node3D.new()
 	body.add_child(anchor)
-	anchor.global_position = global_position.lerp(body.global_position, 0.5)	
+	anchor.global_position = global_position.lerp(body.global_position, 0.25)	
 	anchor.global_rotation = global_rotation
 	clinging_onto = anchor
 	clinging_clowns.append(self)
-	main_collision_trigger.call_deferred("set_disabled", true)
+	spin_time_left = MAX_SPIN_TIME
+	main_collision_trigger.scale = Vector3.ONE * 0.1
 	
 	#var joint : PinJoint3D = PinJoint3D.new()
 	#joint.node_a = body.get_path()
@@ -230,8 +242,19 @@ func _delayed_death():
 	
 	await get_tree().create_timer(2.0).timeout
 	print("death end")
+	
+	visible = false
+	
 	effect.queue_free()
-	queue_free()
+		
+	await get_tree().create_timer(30.0).timeout
+	visible = true
+	global_position = initial_position
+	linear_velocity = Vector3.ZERO
+	state = ClownState.PEDESTRIAN
+	main_collision_trigger.scale = Vector3.ONE
+	_update_layers()
+
 
 func _remove_from_clinging_clowns():
 	var index : int = clinging_clowns.find(self)
