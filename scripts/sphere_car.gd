@@ -30,10 +30,10 @@ func _process(delta):
 
 	if not ground_ray.is_colliding():
 		return
-	speed_input = Input.get_axis("accelerate","brake") * acceleration
+	speed_input = Input.get_axis("brake","accelerate") * acceleration
 	turn_input = Input.get_axis("steer_right", "steer_left") * deg_to_rad(steering)
-	right_wheel.rotation.y = turn_input+deg_to_rad(-90)
-	left_wheel.rotation.y = turn_input+deg_to_rad(-90)
+	right_wheel.rotation.y = turn_input+deg_to_rad(90)
+	left_wheel.rotation.y = turn_input+deg_to_rad(90)
 
 	
 	if linear_velocity.length() > turn_stop_limit:

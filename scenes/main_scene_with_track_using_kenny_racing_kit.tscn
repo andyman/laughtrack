@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqt5gjmcw68bv"]
+[gd_scene load_steps=26 format=3 uid="uid://dt5lsueijqnyl"]
 
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="1_3hbqr"]
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_52rg1"]
@@ -44,7 +44,7 @@ size = Vector3(10000, 10, 10000)
 [node name="main_scene" type="Node3D"]
 
 [node name="SphereCar" parent="." instance=ExtResource("1_3hbqr")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 4.11102, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.11102, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vv68l")

@@ -79,10 +79,6 @@ reset={
 3d_render/layer_3="CarStacking"
 3d_render/layer_4="Clown"
 
-[physics]
-
-3d/default_gravity=9.8
-
 [rendering]
 
 renderer/rendering_method="mobile"
