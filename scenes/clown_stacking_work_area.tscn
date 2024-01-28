@@ -1,0 +1,239 @@
+[gd_scene load_steps=27 format=3 uid="uid://slowi616cm46"]
+
+[ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_4t7re"]
+[ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_0q6rr"]
+[ext_resource type="PackedScene" uid="uid://dd3dd5vku0ubt" path="res://prefabs/follow_cam.tscn" id="3_wv6mm"]
+[ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="4_8bayy"]
+[ext_resource type="PackedScene" uid="uid://pvemd42j1f8r" path="res://prefabs/racetrack/road_start.tscn" id="5_r8x4l"]
+[ext_resource type="PackedScene" uid="uid://vnn46eh0kg3f" path="res://prefabs/racetrack/road_straight.tscn" id="6_vlyp2"]
+[ext_resource type="PackedScene" uid="uid://cokkl8lr4evc5" path="res://prefabs/racetrack/road_straight_long.tscn" id="7_78cn1"]
+[ext_resource type="PackedScene" uid="uid://sd7yuegmix6d" path="res://prefabs/racetrack/road_ramp_long_curved.tscn" id="8_k7ug8"]
+[ext_resource type="PackedScene" uid="uid://c4mfdmugali2y" path="res://prefabs/racetrack/road_ramp_long.tscn" id="9_lp8ps"]
+[ext_resource type="PackedScene" uid="uid://mfvkvqp4euap" path="res://prefabs/racetrack/road_corner_larger.tscn" id="10_ycf3g"]
+[ext_resource type="PackedScene" uid="uid://cd3rmbyta6fbi" path="res://prefabs/racetrack/road_straight_bridge_start.tscn" id="11_71nr1"]
+[ext_resource type="PackedScene" uid="uid://blxubvg810b0x" path="res://prefabs/racetrack/ramp.tscn" id="12_slopm"]
+[ext_resource type="PackedScene" uid="uid://cdcslfd18ilta" path="res://prefabs/racetrack/road_straight_long_bump_round.tscn" id="13_ip40c"]
+[ext_resource type="PackedScene" uid="uid://bctji0bfqfajr" path="res://prefabs/racetrack/road_split_larger.tscn" id="14_57tg6"]
+[ext_resource type="PackedScene" uid="uid://mw4lv3u0us8a" path="res://prefabs/racetrack/road_corner_bridge_larger.tscn" id="15_0q8ca"]
+[ext_resource type="PackedScene" uid="uid://c6dc2wfaygwnk" path="res://prefabs/racetrack/overhead_round.tscn" id="16_055g2"]
+[ext_resource type="PackedScene" uid="uid://clemi5d8qt7o5" path="res://prefabs/racetrack/road_straight_bridge_mid.tscn" id="17_eb720"]
+[ext_resource type="PackedScene" uid="uid://c3strxr1xeix8" path="res://prefabs/racetrack/road_straight_bridge.tscn" id="18_uonu6"]
+[ext_resource type="PackedScene" uid="uid://cyjcp3fq1jcbh" path="res://prefabs/racetrack/road_straight_long_bump.tscn" id="19_3yfjg"]
+[ext_resource type="PackedScene" uid="uid://hskw3ct7xdqq" path="res://prefabs/racetrack/road_corner_large.tscn" id="20_kvvcs"]
+[ext_resource type="PackedScene" uid="uid://qj41nisi3cwa" path="res://scenes/clown.tscn" id="21_v72g5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tjij1"]
+sky_material = SubResource("ProceduralSkyMaterial_jp5wt")
+
+[sub_resource type="Environment" id="Environment_vv68l"]
+background_mode = 2
+sky = SubResource("Sky_tjij1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fwqe"]
+size = Vector3(10000, 10, 10000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3t0yu"]
+size = Vector3(10000, 10, 10000)
+
+[node name="main_scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vv68l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Car" parent="." instance=ExtResource("1_4t7re")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 2
+collision_mask = 11
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_6fwqe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+mesh = SubResource("BoxMesh_3t0yu")
+surface_material_override/0 = ExtResource("2_0q6rr")
+
+[node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("3_wv6mm")]
+target = NodePath("../Car")
+look_target = NodePath("../Car")
+
+[node name="EscapeToQuit" parent="." instance=ExtResource("4_8bayy")]
+
+[node name="roadStart" parent="." instance=ExtResource("5_r8x4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+
+[node name="roadStraight" parent="." instance=ExtResource("6_vlyp2")]
+
+[node name="roadStraight4" parent="." instance=ExtResource("6_vlyp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+
+[node name="roadStraightLong" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
+
+[node name="roadRampLongCurved" parent="." instance=ExtResource("8_k7ug8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 200)
+
+[node name="roadRampLongCurved2" parent="." instance=ExtResource("8_k7ug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 400)
+
+[node name="roadRampLong" parent="." instance=ExtResource("9_lp8ps")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -125, 0, 525)
+
+[node name="roadCornerLarger" parent="." instance=ExtResource("10_ycf3g")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 400)
+
+[node name="roadCornerLarger4" parent="." instance=ExtResource("10_ycf3g")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -800, 0, -400)
+
+[node name="roadCornerLarger2" parent="." instance=ExtResource("10_ycf3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 50, 0)
+
+[node name="roadCornerLarger3" parent="." instance=ExtResource("10_ycf3g")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -800, 50, -250)
+
+[node name="roadStraightBridgeStart" parent="." instance=ExtResource("11_71nr1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -225, 0, 525)
+
+[node name="roadStraightBridgeStart2" parent="." instance=ExtResource("11_71nr1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -275, 0, 525)
+
+[node name="roadStraightBridgeStart3" parent="." instance=ExtResource("11_71nr1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -325, 0, 525)
+
+[node name="roadStraightBridgeStart4" parent="." instance=ExtResource("11_71nr1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -375, 0, 525)
+
+[node name="roadStraightBridgeStart5" parent="." instance=ExtResource("11_71nr1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -425, 0, 525)
+
+[node name="ramp" parent="." instance=ExtResource("12_slopm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -425, 25, 513.956)
+
+[node name="ramp2" parent="." instance=ExtResource("12_slopm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -425, 25, 513.956)
+
+[node name="roadStraightLongBumpRound" parent="." instance=ExtResource("13_ip40c")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -575, 0, 525)
+
+[node name="roadStraightLongBumpRound2" parent="." instance=ExtResource("13_ip40c")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -675, 0, 525)
+
+[node name="roadSplitLarger" parent="." instance=ExtResource("14_57tg6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -675, 0, 525)
+
+[node name="roadCornerBridgeLarger" parent="." instance=ExtResource("15_0q8ca")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -922.198, 0, 526.66)
+
+[node name="roadRampLongCurved3" parent="." instance=ExtResource("8_k7ug8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -825, 0, 525)
+
+[node name="roadStraightLong2" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 400)
+
+[node name="roadStraightLong6" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, -100)
+
+[node name="roadStraightLong7" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, -200)
+
+[node name="roadStraightLong8" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, -300)
+
+[node name="roadStraightLong3" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 300)
+
+[node name="roadStraightLong4" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 200)
+
+[node name="roadStraightLong5" parent="." instance=ExtResource("7_78cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 200)
+
+[node name="overheadRound" parent="." instance=ExtResource("16_055g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 225)
+
+[node name="roadStraightBridgeStart6" parent="." instance=ExtResource("11_71nr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 400)
+
+[node name="roadStraightBridgeMid" parent="." instance=ExtResource("17_eb720")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 350)
+
+[node name="roadStraightBridge" parent="." instance=ExtResource("18_uonu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 300)
+
+[node name="roadStraightBridgeMid2" parent="." instance=ExtResource("17_eb720")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 250)
+
+[node name="roadStraightBridgeMid3" parent="." instance=ExtResource("17_eb720")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 200)
+
+[node name="roadStraightBridgeMid4" parent="." instance=ExtResource("17_eb720")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 150)
+
+[node name="roadStraightBridgeMid5" parent="." instance=ExtResource("17_eb720")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 0, 150)
+
+[node name="roadStraightLongBump" parent="." instance=ExtResource("19_3yfjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 100)
+
+[node name="roadStraightLongBump2" parent="." instance=ExtResource("19_3yfjg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 0, 0)
+
+[node name="roadStraightLongBump3" parent="." instance=ExtResource("19_3yfjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -675, 0, -525)
+
+[node name="roadStraightLongBump4" parent="." instance=ExtResource("19_3yfjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -575, 0, -525)
+
+[node name="roadStraightLongBump5" parent="." instance=ExtResource("19_3yfjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -475, 0, -525)
+
+[node name="roadStraightLongBump6" parent="." instance=ExtResource("19_3yfjg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -375, 0, -525)
+
+[node name="roadRampLongCurved4" parent="." instance=ExtResource("8_k7ug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1050, 25, 100)
+
+[node name="ramp3" parent="." instance=ExtResource("12_slopm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -789.4, 50, -262.444)
+
+[node name="roadStraight2" parent="." instance=ExtResource("6_vlyp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -800, 50, -250)
+
+[node name="roadCornerLarge" parent="." instance=ExtResource("20_kvvcs")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -275, 0, -525)
+
+[node name="roadCornerLarge2" parent="." instance=ExtResource("20_kvvcs")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -125, 0, -375)
+
+[node name="roadCornerLarge3" parent="." instance=ExtResource("20_kvvcs")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -75, 0, -375)
+
+[node name="roadStraight3" parent="." instance=ExtResource("6_vlyp2")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -125, 0, -375)
+
+[node name="roadRampLongCurved5" parent="." instance=ExtResource("8_k7ug8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -300)
+
+[node name="roadRampLongCurved6" parent="." instance=ExtResource("8_k7ug8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 25, -200)
+
+[node name="Clown" parent="." instance=ExtResource("21_v72g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 125)
+state = 0
+
+[editable path="Car"]
+[editable path="roadStraightLong"]

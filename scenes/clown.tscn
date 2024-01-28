@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://qj41nisi3cwa"]
+
+[ext_resource type="Script" path="res://scripts/clown.gd" id="1_itpst"]
+[ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="2_qsujj"]
+[ext_resource type="Material" uid="uid://donc5sg7ppb64" path="res://artwork/clowns/clown_material.tres" id="3_w0lb5"]
+[ext_resource type="Material" uid="uid://ctntqthb4ge01" path="res://artwork/clowns/clown_face.tres" id="4_f4upq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_210qw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bao51"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6y03t"]
+radius = 1.5
+
+[node name="Clown" type="RigidBody3D" node_paths=PackedStringArray("trigger_area")]
+collision_layer = 8
+collision_mask = 15
+mass = 0.01
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -1, 0)
+contact_monitor = true
+script = ExtResource("1_itpst")
+trigger_area = NodePath("Area3D")
+pedestrian_mask = 2
+flying_mask = 0
+fired_mask = 13
+clinging_mask = 13
+dead_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_210qw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+layers = 8
+mesh = SubResource("CapsuleMesh_bao51")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_6y03t")
+
+[node name="LAUGH_TRACK_CLOWN_5" parent="." instance=ExtResource("2_qsujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965227, 0)
+
+[node name="0_BODY_001" parent="LAUGH_TRACK_CLOWN_5" index="0"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="1_ARM_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="3"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="1_FOREARM_L__001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_ARM_R_001" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239234, -0.0901225, -0.0917315)
+material_override = ExtResource("3_w0lb5")
+
+[node name="1_LEG_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="4"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="2_ARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="5"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="2_FOREARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_ARM_L_001" index="0"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="2_LEG_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="6"]
+material_override = ExtResource("3_w0lb5")
+
+[node name="CLOWN_HEAD" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="7"]
+material_override = ExtResource("4_f4upq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area3d_body_entered"]
+
+[editable path="LAUGH_TRACK_CLOWN_5"]

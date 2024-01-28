@@ -43,6 +43,13 @@ move_back={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="Default"
+3d_render/layer_2="CarDriving"
+3d_render/layer_3="CarStacking"
+3d_render/layer_4="Clown"
+
 [rendering]
 
 renderer/rendering_method="mobile"
