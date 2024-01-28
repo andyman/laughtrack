@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dutf0anjjul06"]
+
+[ext_resource type="PackedScene" uid="uid://75dox673gysp" path="res://artwork/racetrack/GLTF format/barrierWhite.glb" id="1_hjnws"]
+
+[node name="barrierWhite" instance=ExtResource("1_hjnws")]
+
+[node name="barrierWhite(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

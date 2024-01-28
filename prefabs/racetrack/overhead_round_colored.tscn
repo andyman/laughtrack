@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cadovvxa3xtr1"]
+
+[ext_resource type="PackedScene" uid="uid://dcgkbjifokg7h" path="res://artwork/racetrack/GLTF format/overheadRoundColored.glb" id="1_ehqxq"]
+
+[node name="overheadRoundColored" instance=ExtResource("1_ehqxq")]
+
+[node name="overheadRoundColored(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5, 0, 0)

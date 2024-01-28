@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://keci5hqym2jq"]
+
+[ext_resource type="PackedScene" uid="uid://bkuiusxk1ia64" path="res://artwork/racetrack/GLTF format/roadStraightLongMid.glb" id="1_cb070"]
+
+[node name="roadStraightLongMid" instance=ExtResource("1_cb070")]
+
+[node name="roadStraightLongMid(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

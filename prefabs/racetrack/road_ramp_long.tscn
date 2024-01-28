@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4mfdmugali2y"]
+
+[ext_resource type="PackedScene" uid="uid://wo7rhu6qssfm" path="res://artwork/racetrack/GLTF format/roadRampLong.glb" id="1_ey4e5"]
+
+[node name="roadRampLong" instance=ExtResource("1_ey4e5")]
+
+[node name="roadRampLong(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

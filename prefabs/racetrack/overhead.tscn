@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yuojx7e7l5bm"]
+
+[ext_resource type="PackedScene" uid="uid://r6jv8cwjjh5u" path="res://artwork/racetrack/GLTF format/overhead.glb" id="1_og5jm"]
+
+[node name="overhead" instance=ExtResource("1_og5jm")]
+
+[node name="overhead(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)

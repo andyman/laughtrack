@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpkue2u8tmhty"]
+
+[ext_resource type="PackedScene" uid="uid://b8u3q2aae7pmp" path="res://artwork/racetrack/GLTF format/roadCrossing.glb" id="1_k875t"]
+
+[node name="roadCrossing" instance=ExtResource("1_k875t")]
+
+[node name="roadCrossing(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

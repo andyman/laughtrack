@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ep2jcelygyr"]
+
+[ext_resource type="PackedScene" uid="uid://cpliu2byrii5u" path="res://artwork/racetrack/GLTF format/roadSplitRound.glb" id="1_myriq"]
+
+[node name="roadSplitRound" instance=ExtResource("1_myriq")]
+
+[node name="roadSplitRound(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

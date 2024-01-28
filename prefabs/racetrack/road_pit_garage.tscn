@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhy6ld84wyri2"]
+
+[ext_resource type="PackedScene" uid="uid://bn27pbmulqc3t" path="res://artwork/racetrack/GLTF format/roadPitGarage.glb" id="1_2vhx8"]
+
+[node name="roadPitGarage" instance=ExtResource("1_2vhx8")]
+
+[node name="roadPitGarage(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

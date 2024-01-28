@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqbtp83bgwdyq"]
+
+[ext_resource type="PackedScene" uid="uid://b10ifr08ayol8" path="res://artwork/racetrack/GLTF format/roadStraightSkew.glb" id="1_r7oey"]
+
+[node name="roadStraightSkew" instance=ExtResource("1_r7oey")]
+
+[node name="roadStraightSkew(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

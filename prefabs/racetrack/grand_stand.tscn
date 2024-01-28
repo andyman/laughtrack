@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkb2ws2mqh8cp"]
+
+[ext_resource type="PackedScene" uid="uid://th7xj70rtuf0" path="res://artwork/racetrack/GLTF format/grandStand.glb" id="1_vapii"]
+
+[node name="grandStand" instance=ExtResource("1_vapii")]
+
+[node name="grandStand(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cakfpu4okmfg4"]
+
+[ext_resource type="PackedScene" uid="uid://bqum4ans2atqu" path="res://artwork/racetrack/GLTF format/rail.glb" id="1_8pjqc"]
+
+[node name="rail" instance=ExtResource("1_8pjqc")]
+
+[node name="rail(Clone)" parent="." index="0"]
+transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, -25, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db24dg5ehc6qe"]
+
+[ext_resource type="PackedScene" uid="uid://bhj64773rhh4c" path="res://artwork/racetrack/GLTF format/lightColored.glb" id="1_41bju"]
+
+[node name="lightColored" instance=ExtResource("1_41bju")]
+
+[node name="lightColored(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

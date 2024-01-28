@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhtc1pcgvdyev"]
+
+[ext_resource type="PackedScene" uid="uid://ccl6w3ttuxb4v" path="res://artwork/racetrack/GLTF format/roadCurvedSplit.glb" id="1_jlwco"]
+
+[node name="roadCurvedSplit" instance=ExtResource("1_jlwco")]
+
+[node name="roadCurvedSplit(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)

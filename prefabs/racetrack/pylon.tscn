@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://02f7w2pl4lpt"]
+
+[ext_resource type="PackedScene" uid="uid://duf5ivf6wgjay" path="res://artwork/racetrack/GLTF format/pylon.glb" id="1_bhdxk"]
+
+[node name="pylon" instance=ExtResource("1_bhdxk")]
+
+[node name="pylon(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

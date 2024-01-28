@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://podvnrbeacqi"]
+
+[ext_resource type="PackedScene" uid="uid://bjxg3ahvrov6o" path="res://artwork/racetrack/GLTF format/roadCornerSmallSquare.glb" id="1_vxf32"]
+
+[node name="roadCornerSmallSquare" instance=ExtResource("1_vxf32")]
+
+[node name="roadCornerSmallSquare(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
