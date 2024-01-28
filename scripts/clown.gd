@@ -24,6 +24,8 @@ const DIST_FROM_CAM : float= -5.0
 const SPIN_RATE : float = 2.0
 const SPIN_LERP_RATE : float = 20.0
 const SPIN_RADIUS : float = 0.5
+const LAUNCH_SPEED : float = 100.0
+
 var cam : Camera3D
 var circle_time : float = 0.0
 
@@ -45,11 +47,23 @@ func _process_flying(delta):
 	if (cam == null):
 		return
 		
+	# make clown circle around the camera
 	circle_time += delta
-	
 	var rads = circle_time * TAU * SPIN_RATE
 	var target_pos = cam.global_position + cam.global_basis.z * DIST_FROM_CAM + cam.global_basis.x * SPIN_RADIUS * cos(rads) + cam.global_basis.y * SPIN_RADIUS * sin(rads)
 	global_position = global_position.lerp(target_pos, delta * SPIN_LERP_RATE)
+	
+	# make clown face in the camera's direction
+	look_at(global_position + cam.global_basis.z, Vector3.UP, true)
+	
+	# fire the dude forward if it was pressed
+	if (Input.is_action_just_pressed("fire")):
+		_fire_clown(-cam.global_basis.z)
+
+func _fire_clown(direction : Vector3):
+	state = ClownState.FIRED
+	_update_layers()
+	apply_central_impulse(direction * LAUNCH_SPEED * mass)
 	
 	
 func _update_layers():
