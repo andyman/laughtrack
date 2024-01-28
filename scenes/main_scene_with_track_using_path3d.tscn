@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://botmxx4q7u87g"]
+[gd_scene load_steps=11 format=3 uid="uid://k0un70bnu4vc"]
 
-[ext_resource type="PackedScene" uid="uid://ih5cxuyg5rr5" path="res://prefabs/car.tscn" id="1_7mfbe"]
-[ext_resource type="PackedScene" uid="uid://dd3dd5vku0ubt" path="res://prefabs/follow_cam.tscn" id="2_oiqb2"]
-[ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="3_m3duj"]
+[ext_resource type="PackedScene" path="res://prefabs/follow_cam.tscn" id="2_oiqb2"]
+[ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="3_m3duj"]
+[ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="4_0wusx"]
 [ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="4_1b0d3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
@@ -26,7 +26,8 @@ size = Vector3(1000, 10, 1000)
 size = Vector3(1000, 10, 1000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keyrr"]
-albedo_color = Color(0.392157, 0.392157, 0.392157, 1)
+transparency = 1
+albedo_color = Color(0.392157, 0.392157, 0.392157, 0.427451)
 
 [node name="main_scene" type="Node3D"]
 
@@ -36,9 +37,6 @@ environment = SubResource("Environment_vv68l")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Car" parent="." instance=ExtResource("1_7mfbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -51,8 +49,8 @@ mesh = SubResource("BoxMesh_kkac8")
 surface_material_override/0 = SubResource("StandardMaterial3D_keyrr")
 
 [node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("2_oiqb2")]
-target = NodePath("../Car")
-look_target = NodePath("../Car")
+target = NodePath("../SphereCar")
+look_target = NodePath("../SphereCar")
 
 [node name="EscapeToQuit" parent="." instance=ExtResource("3_m3duj")]
 
@@ -81,3 +79,6 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = true
+
+[node name="SphereCar" parent="." instance=ExtResource("4_0wusx")]
+transform = Transform3D(0.999981, 0.00614352, 0, -0.00614352, 0.999981, 0, 0, 0, 1, 0, 3.00054, 0)
