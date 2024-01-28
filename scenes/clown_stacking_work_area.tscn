@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://slowi616cm46"]
+[gd_scene load_steps=28 format=3 uid="uid://slowi616cm46"]
 
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="2_0q6rr"]
 [ext_resource type="PackedScene" uid="uid://dd3dd5vku0ubt" path="res://prefabs/follow_cam.tscn" id="3_wv6mm"]
@@ -42,6 +42,8 @@ size = Vector3(10000, 10, 10000)
 [sub_resource type="BoxMesh" id="BoxMesh_3t0yu"]
 size = Vector3(10000, 10, 10000)
 
+[sub_resource type="BoxMesh" id="BoxMesh_5vfya"]
+
 [node name="main_scene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -58,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 shape = SubResource("BoxShape3D_6fwqe")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.1, 0)
 mesh = SubResource("BoxMesh_3t0yu")
 surface_material_override/0 = ExtResource("2_0q6rr")
 
@@ -70,6 +72,10 @@ look_target = NodePath("../SphereCar")
 
 [node name="roadStart" parent="." instance=ExtResource("5_r8x4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+
+[node name="SphereCar_clowncar_StaticBody3D#MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_5vfya")
 
 [node name="roadStraight" parent="." instance=ExtResource("6_vlyp2")]
 
@@ -233,3 +239,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30783, 125)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.45657, 0)
 
 [editable path="roadStraightLong"]
+[editable path="SphereCar"]

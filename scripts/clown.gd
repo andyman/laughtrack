@@ -23,7 +23,7 @@ enum ClownState {PEDESTRIAN, FLYING, FIRED, CLINGING, DEAD}
 const DIST_FROM_CAM : float= -5.0
 const SPIN_RATE : float = 2.0
 const SPIN_LERP_RATE : float = 20.0
-const SPIN_RADIUS : float = 0.5
+const SPIN_RADIUS : float = 1
 const LAUNCH_SPEED : float = 100.0
 
 var cam : Camera3D
@@ -85,29 +85,43 @@ func _pedestrian_hit(body):
 	_update_layers()
 	
 func _fired_clown_hit(body):
+	
+	if (state != ClownState.FIRED):
+		return
+		
+	print("Collision layer: ", body.collision_layer)
+	
 	# ground
-	if ((body.collision_layer & 1) != 0):
-		print("ground hit")
+	if body.collision_layer == 1:
+		print("* ground hit: ", body.name)
 		state = ClownState.DEAD
 		_delayed_death()
 		
-	elif ((body.collision_layer & 4) != 0):
-		print("car hit")
+	elif body.collision_layer == 8:
+		print("* car hit: ", body.name)
 		state = ClownState.CLINGING
 		_cling_onto(body)
 		
-	elif ((body.collision_layer & 8) != 0):
-		print("clown hit")
-		state = ClownState.CLINGING
-		_cling_onto(body)
+	elif body.collision_layer == 16:
+		print("* clown hit: ", body.name)
+		var otherClown = body as Clown
+		if (otherClown.state == ClownState.CLINGING):
+			state = ClownState.CLINGING
+			_cling_onto(body)
+		
 	
 	_update_layers()
 	
-func _cling_onto(body):
-	#TODO
-	pass
+func _cling_onto(body : PhysicsBody3D):
+	var joint : PinJoint3D = PinJoint3D.new()
+	joint.node_a = body.get_path()
+	joint.node_b = get_path()
+	
+	add_child(joint)
+	
 	
 func _clinging_hit(body):
+	print("Cling onto " + body.name)
 	# TODO
 	pass
 	
