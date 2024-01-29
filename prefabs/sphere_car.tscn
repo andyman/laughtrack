@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtsdo511uuj6m" path="res://artwork/car/Clowncar_swheel.glb" id="5_oe3lw"]
 [ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="5_tn3si"]
 [ext_resource type="Material" uid="uid://donc5sg7ppb64" path="res://artwork/clowns/clown_material.tres" id="6_aqsoi"]
-[ext_resource type="Material" uid="uid://ctntqthb4ge01" path="res://artwork/clowns/clown_face.tres" id="6_h6c1u"]
+[ext_resource type="Material" path="res://artwork/clowns/clown_face.tres" id="6_h6c1u"]
 [ext_resource type="Material" uid="uid://dd7jh5v782bdl" path="res://artwork/car/seatback_mat.tres" id="8_1gpff"]
 [ext_resource type="Texture2D" uid="uid://kudkpts5y0lw" path="res://artwork/car/Honkplate.png" id="8_l1pmy"]
 [ext_resource type="AudioStream" uid="uid://bp18lgmxshf5s" path="res://audio/effects/SFX_Cartoon_Boing_Bounce_1.mp3" id="12_740l2"]

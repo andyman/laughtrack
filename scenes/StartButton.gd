@@ -12,5 +12,5 @@ func _process(delta):
 
 func _on_pressed():
 	# Change string to swap first level
-	get_tree().change_scene_to_file("res://scenes/UI_Test_main_scene_with_track_using_path3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/laugh_track1.tscn")
 	pass # Replace with function body.

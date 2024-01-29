@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://clr4vdt3hreo6"]
 
 [ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="1_kcxay"]
-[ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="2_580xi"]
+[ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="2_580xi"]
 [ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="3_joaje"]
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="4_o23u7"]
 [ext_resource type="Theme" uid="uid://csmql14t37xar" path="res://UI/hud.tres" id="5_86y8w"]
