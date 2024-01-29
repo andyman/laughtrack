@@ -5,12 +5,14 @@
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_rkwqb"]
 [ext_resource type="Script" path="res://scenes/Countdown.gd" id="3_s511n"]
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("speed_label", "clown_label", "lap_label", "percent_faster_label")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("speed_label", "clown_label", "lap_label", "percent_faster_label", "final_time_label", "timer_label")]
 script = ExtResource("1_vgvx1")
 speed_label = NodePath("SpeedValue")
 clown_label = NodePath("ScoreValue")
 lap_label = NodePath("LapsValue")
 percent_faster_label = NodePath("ScoreValue/ScoreLabel3")
+final_time_label = NodePath("Victory/Final Time")
+timer_label = NodePath("TimeNumberLabel")
 
 [node name="TimeNumberLabel" type="Label" parent="."]
 anchors_preset = 5
@@ -140,5 +142,69 @@ script = ExtResource("3_s511n")
 [node name="Timer" type="Timer" parent="Countdown"]
 one_shot = true
 autostart = true
+
+[node name="Victory" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Victory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = -149.0
+offset_right = 445.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p6nvv")
+theme_override_font_sizes/font_size = 100
+text = "RACE COMPLETED
+"
+
+[node name="Final Time" type="Label" parent="Victory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = -42.5
+offset_right = 445.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p6nvv")
+theme_override_font_sizes/font_size = 100
+text = "00:00
+"
+horizontal_alignment = 1
+
+[node name="label" type="Label" parent="Victory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -423.0
+offset_top = 69.0
+offset_right = 445.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p6nvv")
+theme_override_font_sizes/font_size = 50
+text = "Final Time"
+horizontal_alignment = 1
 
 [connection signal="startinggunfired" from="Countdown" to="TimeNumberLabel" method="_on_countdown_startinggunfired"]

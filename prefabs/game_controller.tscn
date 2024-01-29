@@ -5,3 +5,8 @@
 [node name="GameController" type="Node3D"]
 
 [node name="HUD" parent="." instance=ExtResource("1_7l4ls")]
+
+[node name="StartButton" parent="HUD/Victory" index="3"]
+layout_mode = 0
+
+[editable path="HUD"]

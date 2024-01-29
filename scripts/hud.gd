@@ -13,6 +13,8 @@ var flash : int = 0
 @export var clown_label : Label
 @export var lap_label : Label
 @export var percent_faster_label : Label
+@export var final_time_label : Label
+@export var timer_label : Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,3 +39,8 @@ func _process(delta):
 		lap_label.text = str(GameController.instance.lap) + "/" + str(GameController.instance.total_laps)
 	else:
 		lap_label.text = "-/-"
+	final_time_label.text = timer_label.text
+
+
+func _on_start_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

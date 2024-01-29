@@ -8,7 +8,7 @@ class_name GameController
 
 static var instance : GameController = null
 
-@export var victory_screen : Node3D
+@export var victory_screen : Control
 
 func _init():
 	instance = self
@@ -35,8 +35,11 @@ func do_finish():
 	print("Race Finished!")
 	# stop the timer
 	game_over = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	victory_screen.visible = true
+	await get_tree().create_timer(10.0).timeout
+	restart_pressed()
 	
 func restart_pressed():
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/laugh_track1.tscn")

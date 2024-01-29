@@ -75,10 +75,11 @@ size = Vector3(10000, 10, 10000)
 
 [node name="main_scene" type="Node3D"]
 
-[node name="GameController" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("1_trgwh")]
+[node name="GameController" parent="." node_paths=PackedStringArray("next_milestone", "victory_screen") instance=ExtResource("1_trgwh")]
 script = ExtResource("2_hor6w")
 lap = 0
 next_milestone = NodePath("../Milestone Startline")
+victory_screen = NodePath("HUD/Victory")
 
 [node name="SphereCar" parent="." instance=ExtResource("20_k8wm4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.89468, 0)
@@ -1649,6 +1650,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6492, 0, 2.25775)
 [node name="AudioStreamPlayer3D" parent="Milestone Rapids" index="2"]
 stream = ExtResource("44_ia4yp")
 
+[editable path="GameController"]
+[editable path="GameController/HUD"]
 [editable path="SphereCar"]
 [editable path="SphereCar/CarBodyCenter/Clowncar_swheel"]
 [editable path="SphereCar/CarBodyCenter/clown"]
