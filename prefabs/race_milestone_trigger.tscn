@@ -1,14 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://etlexue5kq0r"]
+[gd_scene load_steps=5 format=3 uid="uid://etlexue5kq0r"]
 
 [ext_resource type="Script" path="res://scripts/race_milestone_trigger.gd" id="1_sxmx1"]
+[ext_resource type="AudioStream" uid="uid://chbs7wmxoa73r" path="res://audio/effects/697900__akapastels__goofy-laugh.wav" id="2_hk7ni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wedih"]
-size = Vector3(50, 50, 5)
+size = Vector3(665.577, 200, 5)
 
-[node name="RaceMilestoneTrigger" type="Area3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_h7yex"]
+size = Vector3(200, 200, 5)
+
+[node name="RaceMilestoneTrigger" type="Area3D" node_paths=PackedStringArray("audio")]
+collision_mask = 2
 script = ExtResource("1_sxmx1")
+audio = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_wedih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_h7yex")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_hk7ni")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://les4a8kewvl7"]
+[gd_scene load_steps=51 format=3 uid="uid://les4a8kewvl7"]
 
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="1_fqbiv"]
 [ext_resource type="PackedScene" uid="uid://co4noja5bu2br" path="res://prefabs/game_controller.tscn" id="1_trgwh"]
@@ -37,6 +37,13 @@
 [ext_resource type="PackedScene" uid="uid://dutf0anjjul06" path="res://prefabs/racetrack/barrier_white.tscn" id="34_p74ky"]
 [ext_resource type="PackedScene" uid="uid://qj41nisi3cwa" path="res://prefabs/clown.tscn" id="34_wat3m"]
 [ext_resource type="AudioStream" uid="uid://cqqwtet03imp" path="res://audio/music/MUSIC_Bossa_Nova_Fun_Fast_Loop.mp3" id="35_tshq8"]
+[ext_resource type="PackedScene" uid="uid://etlexue5kq0r" path="res://prefabs/race_milestone_trigger.tscn" id="38_an4om"]
+[ext_resource type="AudioStream" uid="uid://vt5145inlxlv" path="res://audio/effects/608085__funwithsound__horn-1-too-doo-clown.mp3" id="39_esvtb"]
+[ext_resource type="AudioStream" uid="uid://dhlr7luq4334o" path="res://audio/effects/DMoshgoofy_laugh2.wav" id="40_5v8k4"]
+[ext_resource type="AudioStream" uid="uid://d3a1eptdnho75" path="res://audio/effects/468441__breviceps__honk-vintage-bicycle-horn.wav" id="41_v64pm"]
+[ext_resource type="AudioStream" uid="uid://dyyi2gijor1ad" path="res://audio/effects/SFX_Toy_Guiro.wav" id="42_uaamg"]
+[ext_resource type="AudioStream" uid="uid://cpyfkxmdi3krw" path="res://audio/effects/SFX_Cartoon_Toy_Squeak_2.wav" id="43_tu18o"]
+[ext_resource type="AudioStream" uid="uid://bvycmuo73puxj" path="res://audio/effects/SFX_Cartoon_Bounce_Boing_Jump.wav" id="44_ia4yp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jp5wt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -68,8 +75,10 @@ size = Vector3(10000, 10, 10000)
 
 [node name="main_scene" type="Node3D"]
 
-[node name="GameController" parent="." instance=ExtResource("1_trgwh")]
+[node name="GameController" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("1_trgwh")]
 script = ExtResource("2_hor6w")
+lap = 0
+next_milestone = NodePath("../Milestone Startline")
 
 [node name="SphereCar" parent="." instance=ExtResource("20_k8wm4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.89468, 0)
@@ -1572,8 +1581,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.896, 12.239, -174.201)
 head_gear = []
 neck_accessories = []
 
+[node name="Milestone Startline" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118057, 0.500008, 46.3415)
+start_line = true
+next_milestone = NodePath("../Milestone First Turn")
+
+[node name="CollisionShape3D" parent="Milestone Startline" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.25774)
+
+[node name="AudioStreamPlayer3D" parent="Milestone Startline" index="2"]
+stream = ExtResource("39_esvtb")
+
+[node name="Milestone First Turn" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118057, 0.500008, 356.206)
+next_milestone = NodePath("../Milestone First Turn2")
+
+[node name="CollisionShape3D" parent="Milestone First Turn" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.25774)
+
+[node name="AudioStreamPlayer3D" parent="Milestone First Turn" index="2"]
+stream = ExtResource("40_5v8k4")
+
+[node name="Milestone First Turn2" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -157.333, 0.500008, 528.589)
+next_milestone = NodePath("../Milestone BigFork")
+
+[node name="CollisionShape3D" parent="Milestone First Turn2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.25774)
+
+[node name="Milestone BigFork" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -612.546, 0.500008, 528.508)
+next_milestone = NodePath("../Milestone BigMerge")
+
+[node name="CollisionShape3D" parent="Milestone BigFork" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.25774)
+
+[node name="AudioStreamPlayer3D" parent="Milestone BigFork" index="2"]
+stream = ExtResource("41_v64pm")
+
+[node name="Milestone BigMerge" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(-0.997102, 0, 0.0760751, 0, 1, 0, -0.0760751, 0, -0.997102, -852.285, 0.500008, -404.837)
+next_milestone = NodePath("../Milestone Bumpies")
+
+[node name="CollisionShape3D" parent="Milestone BigMerge" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6492, 0, 2.25775)
+
+[node name="AudioStreamPlayer3D" parent="Milestone BigMerge" index="2"]
+stream = ExtResource("42_uaamg")
+
+[node name="Milestone Bumpies" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(-0.0438985, 0, 0.999036, 0, 1, 0, -0.999036, 0, -0.0438985, -590.762, 0.500008, -526.792)
+next_milestone = NodePath("../Milestone Rapids")
+
+[node name="CollisionShape3D" parent="Milestone Bumpies" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6492, 0, 2.25775)
+
+[node name="AudioStreamPlayer3D" parent="Milestone Bumpies" index="2"]
+stream = ExtResource("43_tu18o")
+
+[node name="Milestone Rapids" parent="." node_paths=PackedStringArray("next_milestone") instance=ExtResource("38_an4om")]
+transform = Transform3D(0.899725, 0, 0.436456, 0, 1, 0, -0.436456, 0, 0.899725, -13.0098, 0.500008, -297.155)
+next_milestone = NodePath("../Milestone Startline")
+
+[node name="CollisionShape3D" parent="Milestone Rapids" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.6492, 0, 2.25775)
+
+[node name="AudioStreamPlayer3D" parent="Milestone Rapids" index="2"]
+stream = ExtResource("44_ia4yp")
+
 [editable path="SphereCar"]
 [editable path="SphereCar/CarBodyCenter/Clowncar_swheel"]
 [editable path="SphereCar/CarBodyCenter/clown"]
 [editable path="SphereCar/CarBodyCenter/clowncar"]
 [editable path="roadCornerBridgeLarger"]
+[editable path="Milestone Startline"]
+[editable path="Milestone First Turn"]
+[editable path="Milestone First Turn2"]
+[editable path="Milestone BigFork"]
+[editable path="Milestone BigMerge"]
+[editable path="Milestone Bumpies"]
+[editable path="Milestone Rapids"]

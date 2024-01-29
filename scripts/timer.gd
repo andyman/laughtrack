@@ -24,6 +24,10 @@ func _process(delta):
 	if not timestarted:
 		text = "--:--"
 		return
+		
+	if (GameController.instance != null && GameController.instance.game_over):
+		return
+		
 	time += delta
 	seconds = fmod(time,60)
 	minutes = fmod(time,3600)/60
