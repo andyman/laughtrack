@@ -3,7 +3,7 @@ class_name SillyJoint
 
 ## rotation range in degrees along each of the euler axes
 @export var rotation_range : Vector3 = Vector3(45.0, 5.0, 45.0)
-@export var physics_counterpart : Node3D
+#@export var physics_counterpart : Node3D
 @export var clown_root : RigidBody3D
 
 var initial_basis : Basis
@@ -36,6 +36,6 @@ func _process(delta):
 	weight = clampf(weight, 0.0, 1.0)
 	
 	basis = start_basis.slerp(next_basis, weight)
-	physics_counterpart.global_position = global_position
-	physics_counterpart.global_rotation = global_rotation
-		
+	#physics_counterpart.global_position = global_position
+	#physics_counterpart.global_rotation = global_rotation
+		#

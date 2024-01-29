@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://due7e4irws21g"]
+[gd_scene load_steps=34 format=3 uid="uid://due7e4irws21g"]
 
 [ext_resource type="Script" path="res://scripts/sphere_car.gd" id="1_k4426"]
 [ext_resource type="Texture2D" uid="uid://ca3in2yhondvk" path="res://artwork/car/texture_09.png" id="2_arhhj"]
@@ -7,9 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="5_fdmgj"]
 [ext_resource type="PackedScene" uid="uid://dtsdo511uuj6m" path="res://artwork/car/Clowncar_swheel.glb" id="5_oe3lw"]
 [ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="5_tn3si"]
+[ext_resource type="Material" uid="uid://donc5sg7ppb64" path="res://artwork/clowns/clown_material.tres" id="6_aqsoi"]
 [ext_resource type="Material" uid="uid://ctntqthb4ge01" path="res://artwork/clowns/clown_face.tres" id="6_h6c1u"]
 [ext_resource type="Material" uid="uid://dd7jh5v782bdl" path="res://artwork/car/seatback_mat.tres" id="8_1gpff"]
 [ext_resource type="Texture2D" uid="uid://kudkpts5y0lw" path="res://artwork/car/Honkplate.png" id="8_l1pmy"]
+[ext_resource type="AudioStream" uid="uid://bp18lgmxshf5s" path="res://audio/effects/SFX_Cartoon_Boing_Bounce_1.mp3" id="12_740l2"]
+[ext_resource type="Script" path="res://scripts/laugh_player.gd" id="12_bbtmm"]
+[ext_resource type="AudioStream" uid="uid://bnx8cvsaebhup" path="res://audio/effects/WALLA - Crowd laugh and shout - Interior - Louder - 9.mp3" id="13_8reov"]
+[ext_resource type="AudioStream" uid="uid://ch1qy7lx5jgb2" path="res://audio/effects/WALLA - Crowd laugh and shout - Interior - Louder - 14.mp3" id="14_sjoq8"]
+[ext_resource type="AudioStream" uid="uid://bbbj0xdmhfwwh" path="res://audio/effects/WALLA - Crowd laugh and shout - Interior - Medium - 22.mp3" id="15_0dlqm"]
+[ext_resource type="AudioStream" uid="uid://csf6u54d5x0uv" path="res://audio/effects/WALLA - Crowd laugh and shout - Interior - Medium - 30.mp3" id="16_7i64x"]
+[ext_resource type="AudioStream" uid="uid://cmi3u61lfair1" path="res://audio/effects/WALLA - Crowd laugh and shout - Interior - Softer - 7.mp3" id="17_7ha4g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_udv5s"]
 radius = 3.0
@@ -76,7 +84,7 @@ height = 0.2
 albedo_texture = ExtResource("8_l1pmy")
 metallic_specular = 0.0
 
-[node name="SphereCar" type="Node3D" node_paths=PackedStringArray("ball", "clown_stack", "follow_cam", "car_mesh", "body_mesh", "ground_ray", "right_wheel", "left_wheel")]
+[node name="SphereCar" type="Node3D" node_paths=PackedStringArray("ball", "clown_stack", "follow_cam", "car_mesh", "body_mesh", "ground_ray", "right_wheel", "left_wheel", "bounce_sound")]
 script = ExtResource("1_k4426")
 ball = NodePath("Ball")
 sphere_offset = Vector3(0, -2, 0)
@@ -89,6 +97,7 @@ body_mesh = NodePath("CarBodyCenter")
 ground_ray = NodePath("CarBodyCenter/RayCast3D")
 right_wheel = NodePath("CarBodyCenter/clowncar/Wheel_FR")
 left_wheel = NodePath("CarBodyCenter/clowncar/Wheel_FL")
+bounce_sound = NodePath("BounceSound")
 
 [node name="Ball" type="RigidBody3D" parent="."]
 collision_layer = 2
@@ -117,7 +126,7 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.3
 target_position = Vector3(0, -5, 0)
 
 [node name="Clowncar_swheel" parent="CarBodyCenter" instance=ExtResource("5_oe3lw")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -0.160697, 0, 2.5067)
+transform = Transform3D(-7.68192e-08, 7.05016e-08, 1.5, -0.46691, 1.42548, -9.09109e-08, -1.42548, -0.46691, -5.10576e-08, -0.160697, 1.52565, 2.15251)
 
 [node name="Steering_001" parent="CarBodyCenter/Clowncar_swheel" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_1xlcv")
@@ -126,7 +135,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1xlcv")
 surface_material_override/0 = SubResource("StandardMaterial3D_svutd")
 
 [node name="clown" parent="CarBodyCenter" instance=ExtResource("5_tn3si")]
-transform = Transform3D(-0.997918, 0, -0.0644974, 0, 1, 0, 0.0644974, 0, -0.997918, -0.600501, 1.14487, -0.723748)
+transform = Transform3D(-1.99584, 0, -0.128995, 0, 2, 0, 0.128995, 0, -1.99584, -0.600501, 1.78483, -0.723748)
+
+[node name="0_BODY_001" parent="CarBodyCenter/clown" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00680494, -0.69336, 0.0815292)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="0_BOWTIE" parent="CarBodyCenter/clown/0_BODY_001" index="0"]
 visible = false
@@ -135,28 +148,36 @@ visible = false
 visible = false
 
 [node name="1_ARM_R_001" parent="CarBodyCenter/clown/0_BODY_001" index="3"]
-transform = Transform3D(0.618806, 0, -0.785544, 0, 1, 0, 0.785544, 0, 0.618806, 0.154162, 0.263407, 0.0695237)
+transform = Transform3D(0.895357, -0.25178, -0.367346, 0.239287, 0.967648, -0.0799994, 0.375604, -0.0162731, 0.926638, 0.154162, 0.263407, 0.0695237)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="1_FOREARM_L__001" parent="CarBodyCenter/clown/0_BODY_001/1_ARM_R_001" index="0"]
-transform = Transform3D(0.482105, 0, -0.876113, 0, 1, 0, 0.876113, 0, 0.482105, 0.239234, -0.0901225, -0.0917316)
+transform = Transform3D(0.252493, -0.319357, -0.913377, 0.089296, 0.947626, -0.306646, 0.963469, -0.00413489, 0.267786, 0.239234, -0.0901226, -0.0917316)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="1_LEG_R_001" parent="CarBodyCenter/clown/0_BODY_001" index="4"]
 transform = Transform3D(0.997307, 0.0603557, 0.0416703, -0.0603557, 0.352577, 0.933834, 0.0416703, -0.933834, 0.35527, -0.0938222, -0.0935769, -0.00897563)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="1_SHIN_R_001" parent="CarBodyCenter/clown/0_BODY_001/1_LEG_R_001" index="0"]
 transform = Transform3D(0.996889, -0.0624129, 0.0481316, 0.0624129, 0.252188, -0.965663, 0.0481316, 0.965663, 0.255298, -0.0537913, -0.516662, 0.0728368)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="2_ARM_L_001" parent="CarBodyCenter/clown/0_BODY_001" index="5"]
-transform = Transform3D(0.782608, 0, 0.622515, 0, 1, 0, -0.622515, 0, 0.782608, -0.150616, 0.260129, 0.0695237)
+transform = Transform3D(0.875807, 0.195955, 0.441095, -0.402793, 0.80025, 0.444249, -0.265934, -0.566746, 0.779794, -0.150616, 0.260129, 0.0695235)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="2_FOREARM_L_001" parent="CarBodyCenter/clown/0_BODY_001/2_ARM_L_001" index="0"]
-transform = Transform3D(-0.0610311, 0, 0.998136, 0, 1, 0, -0.998136, 0, -0.0610311, -0.252343, -0.0852067, -0.0879765)
+transform = Transform3D(-0.422254, -0.258378, 0.868875, -0.252637, 0.954082, 0.16094, -0.870561, -0.151552, -0.468141, -0.252343, -0.0852067, -0.0879764)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="2_LEG_L_001" parent="CarBodyCenter/clown/0_BODY_001" index="6"]
 transform = Transform3D(0.997736, 0.0574078, 0.0350259, -0.0574078, 0.455809, 0.888224, 0.0350259, -0.888224, 0.458073, 0.102022, -0.0912172, -0.00903547)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="2_SHIN_L_001" parent="CarBodyCenter/clown/0_BODY_001/2_LEG_L_001" index="0"]
 transform = Transform3D(0.998419, -0.0506092, 0.0244635, 0.0506092, 0.619916, -0.783034, 0.0244634, 0.783035, 0.621497, 0.0500298, -0.516662, 0.0724792)
+surface_material_override/0 = ExtResource("6_aqsoi")
 
 [node name="CLOWN_HEAD" parent="CarBodyCenter/clown/0_BODY_001" index="7"]
 material_override = ExtResource("6_h6c1u")
@@ -213,6 +234,52 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x4hjs")
 [node name="FollowCam" parent="." node_paths=PackedStringArray("target", "look_target") instance=ExtResource("5_fdmgj")]
 target = NodePath("../Ball")
 look_target = NodePath("../Ball")
+
+[node name="BounceSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_740l2")
+volume_db = -12.0
+
+[node name="Laughs" type="Node" parent="." node_paths=PackedStringArray("rb", "players")]
+script = ExtResource("12_bbtmm")
+rb = NodePath("../Ball")
+players = [NodePath("AudioStreamPlayer"), NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer6"), NodePath("AudioStreamPlayer7"), NodePath("AudioStreamPlayer8"), NodePath("AudioStreamPlayer9"), NodePath("AudioStreamPlayer10"), NodePath("AudioStreamPlayer11"), NodePath("AudioStreamPlayer12")]
+clips = Array[AudioStream]([ExtResource("13_8reov"), ExtResource("14_sjoq8"), ExtResource("15_0dlqm"), ExtResource("16_7i64x"), ExtResource("17_7ha4g")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="Laughs"]
+volume_db = -12.0
 
 [editable path="CarBodyCenter/Clowncar_swheel"]
 [editable path="CarBodyCenter/clown"]

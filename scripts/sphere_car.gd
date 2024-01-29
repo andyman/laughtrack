@@ -27,12 +27,21 @@ var enable_ray = false
 @export var ground_ray  : RayCast3D
 @export var right_wheel : Node3D
 @export var left_wheel : Node3D
+@export var bounce_sound : AudioStreamPlayer3D
 
+static var instance : SphereCar = null
 
 var clown_stack_reparented : bool = false
 func _on_countdown_startinggunfired():
 	started = true
 	pass
+	
+func _init():
+	instance = self
+	
+func _exit_tree():
+	if (instance == self):
+		instance = null
 	
 func _ready():
 	ground_ray.add_exception(ball)

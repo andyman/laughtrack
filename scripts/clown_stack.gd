@@ -6,6 +6,7 @@ class_name ClownStack
 @export var sphere_car : SphereCar
 
 @export var clown_count : int = 0
+@export var car_horn_audio : AudioStreamPlayer3D
 
 var base_acceleration : float
 var old_clown_count : int = -1
@@ -17,6 +18,9 @@ func _count_clinging_clowns():
 	
 	if (clown_count != old_clown_count):
 		print("clown count: ", clown_count)
+		if (clown_count > old_clown_count && !car_horn_audio.playing):
+			car_horn_audio.pitch_scale = randf_range(0.95, 1.05)
+			car_horn_audio.play()
 		old_clown_count = clown_count
 
 # Called when the node enters the scene tree for the first time.

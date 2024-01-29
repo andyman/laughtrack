@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csf6u54d5x0uv"
+path="res://.godot/imported/WALLA - Crowd laugh and shout - Interior - Medium - 30.mp3-8edff3b2ad2d04e4e2dc21b07839218e.mp3str"
+
+[deps]
+
+source_file="res://audio/effects/WALLA - Crowd laugh and shout - Interior - Medium - 30.mp3"
+dest_files=["res://.godot/imported/WALLA - Crowd laugh and shout - Interior - Medium - 30.mp3-8edff3b2ad2d04e4e2dc21b07839218e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

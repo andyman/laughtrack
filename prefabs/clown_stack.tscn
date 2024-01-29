@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgqh5gg4j6j45"]
+[gd_scene load_steps=10 format=3 uid="uid://bgqh5gg4j6j45"]
 
 [ext_resource type="Script" path="res://scripts/clown_stack.gd" id="1_clc30"]
+[ext_resource type="AudioStream" uid="uid://ds06i4vuhue76" path="res://audio/effects/251611__inplay__clown_horn.mp3" id="2_2k1lg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_je7kf"]
 size = Vector3(4.26903, 0.55011, 2.70178)
@@ -22,33 +23,34 @@ size = Vector3(2.01749, 0.55011, 0.496521)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bcxw"]
 albedo_color = Color(1, 0, 0, 1)
 
-[node name="ClownStack" type="StaticBody3D"]
+[node name="ClownStack" type="StaticBody3D" node_paths=PackedStringArray("car_horn_audio")]
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_clc30")
+car_horn_audio = NodePath("CarHorn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, 0.000121132, 0.0267563)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, 0.124764, 0.0267563)
 shape = SubResource("BoxShape3D_je7kf")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134887, 0.535166, -1.62778)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134887, 0.659809, -1.62778)
 shape = SubResource("BoxShape3D_v76kl")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, 0.535166, 1.50266)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, 0.659809, 1.50266)
 shape = SubResource("BoxShape3D_uxkik")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, 0.535166, 0.171293)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0134888, 0.659809, 0.171293)
 shape = SubResource("BoxShape3D_p0kxd")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.11612, 0.535166, -0.0950895)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.11612, 0.659809, -0.0950895)
 shape = SubResource("BoxShape3D_whikf")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.08224, 0.535166, -0.0950894)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.08224, 0.659809, -0.0950894)
 shape = SubResource("BoxShape3D_whikf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -56,3 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46521, 0)
 visible = false
 mesh = SubResource("BoxMesh_3vsp7")
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcxw")
+
+[node name="CarHorn" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_2k1lg")
+volume_db = -12.0

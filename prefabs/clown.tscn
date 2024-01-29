@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://qj41nisi3cwa"]
+[gd_scene load_steps=12 format=3 uid="uid://qj41nisi3cwa"]
 
 [ext_resource type="Script" path="res://scripts/clown.gd" id="1_1pm1h"]
 [ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="2_g5vp4"]
@@ -7,46 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bxkkhq7l24ket" path="res://artwork/clowns/CLOWN_FACE_TXTR_CLR.png" id="5_vbah4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_210qw"]
+radius = 0.25
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bao51"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_6y03t"]
-radius = 1.0
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_swg6p"]
+radius = 0.35
+height = 2.2
 
 [sub_resource type="SphereMesh" id="SphereMesh_xmeul"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bcdyi"]
-points = PackedVector3Array(0.268182, -0.206468, -0.181185, 0.323414, -0.105992, -0.169135, 0.348141, -0.150038, -0.0915014, 0.268182, -0.206468, 0.0887637, -0.0101166, -0.0419165, -0.0914221, 0.0102202, -0.00486489, -0.0869829, 0.0145727, 0.0483561, -0.0749071, 0.335234, 0.0384288, -0.136343, 0.372831, -0.0597654, -0.0749599, 0.368478, -0.113011, -0.0870357, 0.348141, -0.150038, 0.0080117, -0.0101166, -0.0419165, 0.00806454, 0.323414, -0.105992, 0.080123, 0.336172, 0.0418382, 0.057689, 0.0149104, 0.0496346, -0.00337709, 0.373206, -0.058512, -0.00345635, 0.368478, -0.113011, 0.00481437)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_urxwx"]
-points = PackedVector3Array(0.00339103, -0.0752418, -0.253933, 0.0331033, -0.0841713, -0.220926, 0.00339103, -0.0752418, -0.0156301, 0.0045154, 0.0556195, -0.221626, 0.017673, -0.0251489, -0.243297, 0.236663, -0.0911205, -0.18449, 0.216329, -0.128158, -0.188946, 0.222716, -0.130084, -0.186053, 0.0331033, -0.0841713, -0.0473075, 0.017673, -0.0251489, -0.0232579, 0.00458717, 0.057233, -0.0503399, 0.222716, -0.130084, -0.0865193, 0.243051, -0.0930641, -0.0896917, 0.247788, -0.0385706, -0.0979726, 0.247429, -0.0398174, -0.169515, 0.241041, -0.0378922, -0.172384, 0.243051, -0.0930641, -0.181598, 0.235778, -0.0349585, -0.0950801)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_82aam"]
-points = PackedVector3Array(0.0659174, -0.0313185, 0.228832, -0.00361871, 0.00637479, 0.285529, 0.0464637, -0.0323156, 0.290264, 0.0318134, -0.0948516, 0.339543, 0.0659174, -0.130315, 0.228832, 0.0547142, -0.0278151, 0.118247, 0.0278859, -0.0152829, -0.0641191, -0.0033079, 0.0111522, 0.224139, -0.0784103, -0.0251702, 0.228749, -0.0712476, -0.0461771, 0.292149, -0.0582361, -0.055455, 0.314107, 0.00108579, -0.0628496, 0.338454, 0.00725956, -0.0359713, 0.319471, 0.037309, -0.0477972, 0.313646, 0.00446229, -0.0941176, 0.34365, 0.0318134, -0.130315, 0.339543, 0.0298779, -0.0688457, 0.328606, 0.0547142, -0.130315, 0.118247, 0.0318134, -0.0251702, -0.0685191, 0.0240573, -0.0359159, -0.0844426, -0.0299526, -0.0152829, -0.0641191, -0.00279931, 0.00306521, 0.11632, -0.0634492, -0.0251702, 0.119086, -0.0784103, -0.130315, 0.228749, -0.0449844, -0.130315, 0.311928, -0.0338801, -0.130315, 0.339543, -0.0451257, -0.0739831, 0.331204, -0.0353211, -0.0956132, 0.340297, 0.0318134, -0.130315, -0.0685191, 0.0240573, -0.130315, -0.0844426, -0.0244852, -0.0359159, -0.0844426, -0.0338801, -0.0251702, -0.0685191, -0.0634492, -0.130315, 0.119086, -0.0244852, -0.130315, -0.0844426, -0.0338801, -0.130315, -0.0685191)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3jl12"]
-points = PackedVector3Array(0.0794113, -0.311702, -0.0829221, 0.0819134, -0.292749, -0.083672, 0.0286026, -0.292749, -0.0864299, 0.0276569, -0.535076, -0.0894128, 0.0828645, -0.535076, -0.0894128, 0.0819134, -0.292749, -0.168035, 0.0286026, -0.292749, -0.165285, 0.0276569, -0.535076, -0.154428, 0.0828645, -0.535076, -0.154428)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y6jh1"]
-points = PackedVector3Array(-0.189282, -0.583934, 0.0975071, -0.198803, -0.5072, 0.0768714, -0.210189, -0.712655, 0.0553928, 0.074703, -0.60587, 0.0913882, 0.0702579, -0.0374737, 0.00282015, -0.0739661, 0.0184499, -0.00276802, -0.198803, -0.520779, -0.188208, -0.210189, -0.712655, -0.221425, -0.0977405, -0.0676854, -0.00251828, -0.115865, -0.130921, -0.108038, 0.0827904, -0.711289, 0.0553928, -0.0976258, -0.802406, 0.0010719, 0.0702579, -0.0374737, -0.147312, -0.0739661, 0.0184499, -0.1529, -0.0977405, -0.0676854, -0.154242, 0.0827904, -0.711289, -0.221425, -0.0976258, -0.802406, -0.124366, 0.0771694, -0.78256, 0.0010719, 0.029047, -0.802406, -0.0111347, 0.0771694, -0.78256, -0.124366, 0.029047, -0.802406, -0.099172)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tphpa"]
-points = PackedVector3Array(-0.254153, -0.208106, -0.18494, -0.254153, -0.208106, 0.0850086, -0.334109, -0.151681, -0.0952565, -0.309352, -0.107632, -0.17289, 0.0305757, -0.0416094, -0.0980839, -0.322169, 0.0401995, 0.0539339, -0.309352, -0.107632, 0.0763679, -0.334109, -0.151681, 0.00425661, 0.0305757, -0.0416094, 0.00145565, 0.024167, -0.0435289, 0.00430945, -0.00089553, 0.0479788, -0.00713219, -0.354441, -0.114629, -0.0907908, -0.321215, 0.0367897, -0.140098, 0.00585648, 0.0486607, -0.0815424, 0.0102052, -0.00458196, -0.0936182, 0.00551316, 0.0499236, -0.00998598, -0.35879, -0.0614112, -0.078715, -0.359133, -0.0601483, -0.00721145, -0.354441, -0.114629, 0.00105928)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hkmah"]
-points = PackedVector3Array(-0.00242738, -0.0719624, -0.0156301, -0.0321786, -0.0808907, -0.0473075, -0.00242738, -0.0719624, -0.253933, -0.00356898, 0.0588951, -0.221626, -0.00366217, 0.0605101, -0.0503399, -0.0167322, -0.0218769, -0.0232579, -0.23014, -0.0861533, -0.0867992, -0.209801, -0.123191, -0.0836035, -0.215392, -0.124879, -0.0893651, -0.0321786, -0.0808907, -0.220926, -0.235731, -0.087841, -0.18449, -0.0167322, -0.0218769, -0.243297, -0.215392, -0.124879, -0.188946, -0.240111, -0.0346161, -0.172384, -0.240437, -0.0333639, -0.100818, -0.234846, -0.0316763, -0.0950801, -0.235731, -0.087841, -0.0925608)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_s7lui"]
-points = PackedVector3Array(0.0717462, -0.0365719, 0.231615, 0.0717462, -0.141717, 0.231615, 0.0567568, -0.0365719, 0.121952, 0.0232743, -0.0266847, -0.0612523, -0.00337035, -0.000249505, 0.227006, -0.00305954, -0.00502694, 0.288395, 0.0645694, -0.0575788, 0.295016, 0.0567568, -0.141717, 0.121952, 0.0272018, -0.141717, 0.34241, 0.0272018, -0.0365719, -0.0656522, 0.017807, -0.0473177, -0.0815758, -0.0345641, -0.0266847, -0.0612523, -0.00387894, -0.00833653, 0.119187, -0.0725816, -0.0427203, 0.231699, -0.053142, -0.0437173, 0.293131, -0.0439873, -0.059199, 0.316513, -0.0139378, -0.0473731, 0.322338, -0.00776404, -0.0742514, 0.34132, 0.0515578, -0.0668567, 0.316974, 0.0272018, -0.141717, -0.0656522, 0.0384333, -0.0853849, 0.334071, 0.0286428, -0.107015, 0.343164, -0.0111405, -0.105519, 0.346516, -0.0384916, -0.141717, 0.34241, 0.017807, -0.141717, -0.0815758, -0.0307356, -0.0473177, -0.0815758, -0.0384916, -0.0365719, -0.0656522, -0.0613925, -0.0392168, 0.121114, -0.0725816, -0.141717, 0.231699, -0.0554872, -0.106253, 0.287222, -0.0384916, -0.106253, 0.34241, -0.0365561, -0.0802474, 0.331473, -0.0554872, -0.141717, 0.287222, -0.0307356, -0.141717, -0.0815758, -0.0384916, -0.141717, -0.0656522, -0.0613925, -0.141717, 0.121114)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dxb7h"]
-points = PackedVector3Array(-0.0793452, -0.314061, -0.0824965, -0.0285364, -0.295109, -0.0860127, -0.0818473, -0.295109, -0.0832548, -0.082793, -0.537435, -0.0889956, -0.0275853, -0.537435, -0.0889956, -0.0285364, -0.295109, -0.164868, -0.0818473, -0.295109, -0.167617, -0.082793, -0.537435, -0.154011, -0.0275853, -0.537435, -0.154011)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8s7c2"]
-points = PackedVector3Array(0.185535, -0.586294, 0.0975667, -0.0784503, -0.60823, 0.0914478, 0.206499, -0.715015, 0.0554524, 0.195085, -0.50956, 0.076931, 0.0702475, 0.0160902, -0.00270842, -0.0739765, -0.0398334, 0.00287975, -0.0864803, -0.713649, 0.0554524, 0.206499, -0.715015, -0.221366, 0.0939072, -0.804766, 0.0011315, 0.195085, -0.523139, -0.188149, 0.112147, -0.133281, -0.107979, 0.0940219, -0.0700451, -0.00245868, 0.0702475, 0.0160902, -0.15284, -0.0739765, -0.0398334, -0.147252, -0.0864803, -0.713649, -0.221366, -0.080888, -0.784919, 0.0011315, 0.0939072, -0.804766, -0.124306, -0.0327655, -0.804766, -0.0110751, 0.0940219, -0.0700451, -0.154183, -0.080888, -0.784919, -0.124306, -0.0327655, -0.804766, -0.0991124)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwc3f"]
-points = PackedVector3Array(0.148374, -2.90424e-05, -3.70145e-05, 0.10489, -0.104919, -3.70145e-05, 0.0856315, -0.0856896, -0.0856793, 0.100649, -0.0210593, -0.100678, 0.10489, -2.90424e-05, -0.104953, 0.100417, 0.0222212, -0.100453, 0.0856315, 0.0856315, -0.0856793, 0.10489, 0.10489, -3.70145e-05, 0.0856315, 0.0856315, 0.0856428, 0.100417, 0.0222212, 0.100416, 0.10489, -2.90424e-05, 0.104879, 0.100649, -0.0210593, 0.100641, 0.0856315, -0.0856896, 0.0856428, -2.90424e-05, -0.148374, -3.70145e-05, 0.0275369, -0.099458, -0.0994781, -2.90424e-05, -2.90424e-05, -0.148374, 0.0275369, 0.099429, -0.0994781, -2.90424e-05, 0.148374, -3.70145e-05, 0.0275369, 0.099429, 0.0994415, -2.90424e-05, 0.0474052, 0.202595, 0.0262588, 0.044181, 0.190671, 0.0549575, -0.000755221, 0.20492, -2.90424e-05, -0.0419443, 0.211519, 0.0275369, -0.099458, 0.0994415, -0.0856896, -0.0856896, 0.0856428, -0.104919, -0.104919, -3.70145e-05, -0.0856896, -0.0856896, -0.0856793, -0.0275659, -0.099458, -0.0994781, -2.90424e-05, -0.104919, -0.104953, -2.90424e-05, -0.104919, 0.104879, -0.0275659, -0.099458, 0.0994415, -0.100678, -0.0210593, -0.100678, -0.104919, -2.90424e-05, -0.104953, -0.100446, 0.0222212, -0.100453, -0.0856896, 0.0856315, -0.0856793, -0.0275659, 0.099429, -0.0994781, -2.90424e-05, 0.10489, -0.104953, -0.104919, 0.10489, -3.70145e-05, -0.0856896, 0.0856315, 0.0856428, -0.0275659, 0.099429, 0.0994415, -2.90424e-05, 0.10489, 0.104879, -0.0262878, 0.044181, 0.190671, -2.90424e-05, -0.000755221, 0.234692, -0.0549866, -0.000755221, 0.20492, -0.148374, -2.90424e-05, -3.70145e-05, -0.100678, -0.0210593, 0.100641, -0.100446, 0.0222212, 0.100416, -0.104919, -2.90424e-05, 0.104879)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kt6cc"]
 albedo_color = Color(0.34902, 1, 0, 1)
@@ -67,13 +36,14 @@ trigger_area = NodePath("Area3D")
 head_gear = [NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_1"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/5_HAIR_2_001"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_BOWLER"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD/4_HAT_CONE")]
 neck_accessories = [NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/0_BOWTIE"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK TIE"), NodePath("LAUGH_TRACK_CLOWN_5/0_BODY_001/0_NECK_RUFFLE")]
 main_collision_trigger = NodePath("Area3D/CollisionShape3D")
-pedestrian_mask = 2
+pedestrian_mask = 6
 flying_mask = 0
 fired_mask = 13
 clinging_mask = 13
 dead_mask = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_210qw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -86,58 +56,15 @@ collision_layer = 8
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_6y03t")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_swg6p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 visible = false
 mesh = SubResource("SphereMesh_xmeul")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.386591, 0.445151, 0.0593215)
-shape = SubResource("ConvexPolygonShape3D_bcdyi")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147357, 0.535273, 0.151053)
-shape = SubResource("ConvexPolygonShape3D_urxwx")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0981319, -0.86416, 0.0536647)
-shape = SubResource("ConvexPolygonShape3D_82aam")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154418, -0.338372, 0.14539)
-shape = SubResource("ConvexPolygonShape3D_3jl12")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100627, 0.17829, 0.0725536)
-shape = SubResource("ConvexPolygonShape3D_y6jh1")
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.409764, 0.446789, 0.0630765)
-shape = SubResource("ConvexPolygonShape3D_tphpa")
-
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.157421, 0.531996, 0.151053)
-shape = SubResource("ConvexPolygonShape3D_hkmah")
-
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095696, -0.852758, 0.0507978)
-shape = SubResource("ConvexPolygonShape3D_s7lui")
-
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145247, -0.336012, 0.144973)
-shape = SubResource("ConvexPolygonShape3D_dxb7h")
-
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0952171, 0.180649, 0.072494)
-shape = SubResource("ConvexPolygonShape3D_8s7c2")
-
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128241, 0.75879, -1.04308e-07)
-shape = SubResource("ConvexPolygonShape3D_hwc3f")
-
 [node name="LAUGH_TRACK_CLOWN_5" parent="." instance=ExtResource("2_g5vp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965227, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.17646, 0)
 
 [node name="0_BODY_001" parent="LAUGH_TRACK_CLOWN_5" index="0"]
 material_override = ExtResource("3_2e11k")
@@ -149,71 +76,61 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kt6cc")
 [node name="0_NECK TIE" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="1"]
 visible = false
 
-[node name="0_NECK_RUFFLE" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="2"]
-visible = false
-
-[node name="1_ARM_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="3" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="1_ARM_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="3" node_paths=PackedStringArray("clown_root")]
 material_override = ExtResource("3_2e11k")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../Area3D/CollisionShape3D3")
 clown_root = NodePath("../../..")
 
-[node name="1_FOREARM_L__001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_ARM_R_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="1_FOREARM_L__001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_ARM_R_001" index="0" node_paths=PackedStringArray("clown_root")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239234, -0.0901225, -0.0917315)
 material_override = ExtResource("3_2e11k")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../../Area3D/CollisionShape3D2")
 clown_root = NodePath("../../../..")
 
-[node name="1_LEG_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="4" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="1_LEG_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="4" node_paths=PackedStringArray("clown_root")]
 material_override = ExtResource("3_2e11k")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../Area3D/CollisionShape3D6")
 clown_root = NodePath("../../..")
 
-[node name="1_SHIN_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_LEG_R_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="1_SHIN_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_LEG_R_001" index="0" node_paths=PackedStringArray("clown_root")]
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../../Area3D/CollisionShape3D5")
+rotation_range = Vector3(5, 5, 5)
 clown_root = NodePath("../../../..")
 
-[node name="1_FOOT_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_LEG_R_001/1_SHIN_R_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="1_FOOT_R_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/1_LEG_R_001/1_SHIN_R_001" index="0" node_paths=PackedStringArray("clown_root")]
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../../../Area3D/CollisionShape3D4")
+rotation_range = Vector3(5, 5, 5)
 clown_root = NodePath("../../../../..")
 
-[node name="2_ARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="5" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="2_ARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="5" node_paths=PackedStringArray("clown_root")]
 material_override = ExtResource("3_2e11k")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../Area3D/CollisionShape3D8")
 clown_root = NodePath("../../..")
 
-[node name="2_FOREARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_ARM_L_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="2_FOREARM_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_ARM_L_001" index="0" node_paths=PackedStringArray("clown_root")]
 material_override = ExtResource("3_2e11k")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../../Area3D/CollisionShape3D7")
 clown_root = NodePath("../../../..")
 
-[node name="2_LEG_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="6" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="2_LEG_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="6" node_paths=PackedStringArray("clown_root")]
 material_override = ExtResource("3_2e11k")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../Area3D/CollisionShape3D11")
 clown_root = NodePath("../../..")
 
-[node name="2_SHIN_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_LEG_L_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="2_SHIN_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_LEG_L_001" index="0" node_paths=PackedStringArray("clown_root")]
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../../Area3D/CollisionShape3D10")
+rotation_range = Vector3(5, 5, 5)
 clown_root = NodePath("../../../..")
 
-[node name="2_FOOT_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_LEG_L_001/2_SHIN_L_001" index="0" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="2_FOOT_L_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/2_LEG_L_001/2_SHIN_L_001" index="0" node_paths=PackedStringArray("clown_root")]
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../../../Area3D/CollisionShape3D9")
+rotation_range = Vector3(5, 5, 5)
 clown_root = NodePath("../../../../..")
 
-[node name="CLOWN_HEAD" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="7" node_paths=PackedStringArray("physics_counterpart", "clown_root")]
+[node name="CLOWN_HEAD" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001" index="7" node_paths=PackedStringArray("clown_root")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0060192, 0.481676, -0.0815294)
 material_override = SubResource("StandardMaterial3D_kdap5")
 script = ExtResource("4_757f8")
-physics_counterpart = NodePath("../../../Area3D/CollisionShape3D12")
 clown_root = NodePath("../../..")
 
 [node name="4_HAT_BOWLER" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="0"]
@@ -228,9 +145,6 @@ visible = false
 visible = false
 
 [node name="5_HAIR_2" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="3"]
-visible = false
-
-[node name="5_HAIR_2_001" parent="LAUGH_TRACK_CLOWN_5/0_BODY_001/CLOWN_HEAD" index="4"]
 visible = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

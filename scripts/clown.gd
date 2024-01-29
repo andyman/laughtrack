@@ -64,8 +64,9 @@ func _exit_tree():
 	_remove_from_clinging_clowns()
 	
 func _randomize_accessories():
-	head_gear.pick_random().visible = true
-	neck_accessories.pick_random().visible = true
+	#head_gear.pick_random().visible = true
+	#neck_accessories.pick_random().visible = true
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -138,7 +139,12 @@ func _process_flying(delta):
 func _fire_clown(direction : Vector3):
 	state = ClownState.FIRED
 	_update_layers()
-	apply_central_impulse(direction * LAUNCH_SPEED * mass)
+	
+	var v = direction * LAUNCH_SPEED
+	if (SphereCar.instance != null):
+		v += SphereCar.instance.ball.linear_velocity
+		
+	apply_central_impulse(v * mass)
 	
 	
 func _update_layers():
@@ -167,6 +173,9 @@ func _pedestrian_hit(body):
 		print("pedestrian hit by: ", body.name)
 		state = ClownState.FLYING
 		_update_layers()
+		if (SphereCar.instance != null):
+			if (!SphereCar.instance.bounce_sound.playing):
+				SphereCar.instance.bounce_sound.play()
 	
 func _fired_clown_hit(body):
 	
@@ -210,7 +219,7 @@ func _cling_onto(body : PhysicsBody3D):
 	clinging_onto = anchor
 	clinging_clowns.append(self)
 	spin_time_left = MAX_SPIN_TIME
-	main_collision_trigger.scale = Vector3.ONE * 0.1
+	#main_collision_trigger.scale = Vector3.ONE * 0.1
 	
 	#var joint : PinJoint3D = PinJoint3D.new()
 	#joint.node_a = body.get_path()
@@ -252,7 +261,7 @@ func _delayed_death():
 	global_position = initial_position
 	linear_velocity = Vector3.ZERO
 	state = ClownState.PEDESTRIAN
-	main_collision_trigger.scale = Vector3.ONE
+	#main_collision_trigger.scale = Vector3.ONE
 	_update_layers()
 
 
