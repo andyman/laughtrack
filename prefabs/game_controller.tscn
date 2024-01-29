@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://co4noja5bu2br"]
+
+[ext_resource type="PackedScene" uid="uid://dygbmq8iu8rob" path="res://prefabs/hud.tscn" id="1_7l4ls"]
+
+[node name="GameController" type="Node3D"]
+
+[node name="HUD" parent="." instance=ExtResource("1_7l4ls")]
