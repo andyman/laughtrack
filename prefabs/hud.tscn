@@ -5,11 +5,12 @@
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_rkwqb"]
 [ext_resource type="Script" path="res://scenes/Countdown.gd" id="3_s511n"]
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("speed_label", "clown_label", "lap_label")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("speed_label", "clown_label", "lap_label", "percent_faster_label")]
 script = ExtResource("1_vgvx1")
 speed_label = NodePath("SpeedValue")
 clown_label = NodePath("ScoreValue")
 lap_label = NodePath("LapsValue")
+percent_faster_label = NodePath("ScoreValue/ScoreLabel3")
 
 [node name="TimeNumberLabel" type="Label" parent="."]
 anchors_preset = 5

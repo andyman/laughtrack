@@ -1,7 +1,7 @@
 # controls the countdown
 extends Label
 
-var time = 3600 # seconds
+var time = 0 # seconds
 var dsec = 0
 var seconds =0 
 var minutes = 0
@@ -14,21 +14,25 @@ func _ready():
 
 func _on_countdown_startinggunfired():
 	timestarted = true
-	pass
+	if (SphereCar.instance != null):
+		SphereCar.instance.started = true
+		
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not timestarted:
+		text = "--:--"
 		return
-	time -= delta
+	time += delta
 	seconds = fmod(time,60)
 	minutes = fmod(time,3600)/60
 	var timestring = "%02d : %02d"%[minutes,seconds]
 
 	text = timestring
 
-	if time <= 30:
-		add_theme_color_override("font_color", Color("CRIMSON"))
+	#if time <= 30:
+		#add_theme_color_override("font_color", Color("CRIMSON"))
 	
 	pass
 
