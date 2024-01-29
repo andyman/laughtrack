@@ -1,0 +1,213 @@
+[gd_scene load_steps=16 format=3 uid="uid://dawgdax5wtcwx"]
+
+[ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="1_bati4"]
+[ext_resource type="PackedScene" uid="uid://c3cbb6ddjy4ys" path="res://artwork/car/clowncar3.glb" id="2_x8dvv"]
+[ext_resource type="Theme" uid="uid://csmql14t37xar" path="res://UI/hud.tres" id="3_28ljp"]
+[ext_resource type="Script" path="res://scenes/StartButton.gd" id="4_c32hg"]
+[ext_resource type="Script" path="res://scenes/QuitButton.gd" id="4_tdc1b"]
+[ext_resource type="Script" path="res://scenes/SettingsButton.gd" id="5_00ytd"]
+[ext_resource type="AudioStream" uid="uid://dc0c5nsj08kvy" path="res://audio/effects/DMoshgoofy_statement.wav" id="6_yflig"]
+[ext_resource type="Texture2D" uid="uid://d1dxa4wflac5o" path="res://UI/LAUGH-TRACK-_TITLE_-ALPHA.png" id="8_8vcys"]
+[ext_resource type="Texture2D" uid="uid://b4p5revottspx" path="res://artwork/clowns/STAR-TEXTURE_GGJ24_2.png" id="8_oiywf"]
+[ext_resource type="PackedScene" uid="uid://dtsdo511uuj6m" path="res://artwork/car/Clowncar_swheel.glb" id="10_7kfna"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yysij"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tjij1"]
+sky_material = SubResource("ProceduralSkyMaterial_yysij")
+
+[sub_resource type="Environment" id="Environment_2mtmx"]
+background_mode = 2
+sky = SubResource("Sky_tjij1")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh1su"]
+albedo_color = Color(0.439216, 0.882353, 1, 1)
+albedo_texture = ExtResource("8_oiywf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0ddan"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.902961, -0.0305895, 0.428633, 6.22309e-09, 0.997463, 0.0711842, -0.429723, 0.0642765, -0.90067, 3.48799, 6.31085, -9.71608)
+far = 1000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2mtmx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="clowncar3" parent="." instance=ExtResource("2_x8dvv")]
+transform = Transform3D(0.51711, -0.295573, -0.803265, 0.349456, 0.929607, -0.117096, 0.781331, -0.220154, 0.583999, 0.922692, 5.40517, -5.11298)
+
+[node name="clown" parent="clowncar3" instance=ExtResource("1_bati4")]
+transform = Transform3D(1, -5.96046e-08, 2.98023e-08, 8.9407e-08, 1, -2.98023e-08, 0, 2.98023e-08, 1, -0.145085, 0.843318, -0.519815)
+
+[node name="0_BODY_001" parent="clowncar3/clown" index="0"]
+transform = Transform3D(-1, -2.98023e-08, -8.9407e-08, 2.98023e-08, 1, 0, 5.96046e-08, 0, -1, -0.312814, -0.639716, 0.0815295)
+
+[node name="0_BOWTIE" parent="clowncar3/clown/0_BODY_001" index="0"]
+visible = false
+
+[node name="0_NECK TIE" parent="clowncar3/clown/0_BODY_001" index="1"]
+visible = false
+
+[node name="1_ARM_R_001" parent="clowncar3/clown/0_BODY_001" index="3"]
+transform = Transform3D(0.600919, -0.734294, -0.31577, -0.101914, 0.321442, -0.941429, 0.792787, 0.597903, 0.118326, 0.154164, 0.263406, 0.0695231)
+
+[node name="1_FOREARM_L__001" parent="clowncar3/clown/0_BODY_001/1_ARM_R_001" index="0"]
+transform = Transform3D(0.460386, -1.11759e-08, 0.887719, -3.72529e-09, 1, -6.79865e-08, -0.887719, 3.35276e-08, 0.460386, 0.239234, -0.0901225, -0.0917311)
+
+[node name="1_LEG_R_001" parent="clowncar3/clown/0_BODY_001" index="4"]
+transform = Transform3D(0.984876, -0.0555186, -0.164136, 0.167537, 0.0634208, 0.983825, -0.0442099, -0.996443, 0.0717626, -0.0938225, -0.093576, -0.00897586)
+
+[node name="1_SHIN_R_001" parent="clowncar3/clown/0_BODY_001/1_LEG_R_001" index="0"]
+transform = Transform3D(1, 5.96046e-08, 0, 0, 1, 0, -2.98023e-08, 0, 1, -0.0537915, -0.516661, 0.0728369)
+
+[node name="2_ARM_L_001" parent="clowncar3/clown/0_BODY_001" index="5"]
+transform = Transform3D(0.661917, -0.297888, 0.687844, -0.0701037, 0.889018, 0.452474, -0.746292, -0.347721, 0.567573, -0.105303, 0.370909, -0.113769)
+
+[node name="2_FOREARM_L_001" parent="clowncar3/clown/0_BODY_001/2_ARM_L_001" index="0"]
+transform = Transform3D(0.592211, 0.747303, -0.301369, -0.242706, -0.191207, -0.951069, -0.768362, 0.636378, 0.0681415, -0.252343, -0.0852098, -0.0879769)
+
+[node name="1_HAND_R" parent="clowncar3/clown/0_BODY_001/2_ARM_L_001/2_FOREARM_L_001" index="0"]
+transform = Transform3D(0.508756, 0.860911, -2.98023e-08, -0.860911, 0.508756, 5.96046e-08, -2.08616e-07, -5.96046e-08, 1, -0.375301, -0.113407, -0.0461054)
+
+[node name="Clowncar_swheel" parent="clowncar3/clown/0_BODY_001/2_ARM_L_001/2_FOREARM_L_001/1_HAND_R" index="0" instance=ExtResource("10_7kfna")]
+transform = Transform3D(-0.930076, -0.313531, 0.191466, -0.337863, 0.525364, -0.780923, 0.144255, -0.791006, -0.594559, 2.53914, 0.28654, -0.176081)
+
+[node name="2_LEG_L_001" parent="clowncar3/clown/0_BODY_001" index="6"]
+transform = Transform3D(0.955873, -0.147124, -0.25429, 0.255599, -0.0102606, 0.966729, -0.144838, -0.989066, 0.0277969, 0.102022, -0.091217, -0.00903547)
+
+[node name="2_SHIN_L_001" parent="clowncar3/clown/0_BODY_001/2_LEG_L_001" index="0"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -2.98023e-08, 0, 0, 1, 0.0500298, -0.516662, 0.0724792)
+
+[node name="4_HAT_BOWLER" parent="clowncar3/clown/0_BODY_001/CLOWN_HEAD" index="0"]
+visible = false
+
+[node name="4_HAT_CONE" parent="clowncar3/clown/0_BODY_001/CLOWN_HEAD" index="1"]
+visible = false
+
+[node name="5_HAIR_1" parent="clowncar3/clown/0_BODY_001/CLOWN_HEAD" index="2"]
+visible = false
+
+[node name="5_HAIR_2" parent="clowncar3/clown/0_BODY_001/CLOWN_HEAD" index="3"]
+visible = false
+
+[node name="clown2" parent="clowncar3" instance=ExtResource("1_bati4")]
+transform = Transform3D(1, -5.96046e-08, 2.98023e-08, 8.9407e-08, 1, -2.98023e-08, 0, 2.98023e-08, 1, -0.540515, 0.87907, 1.01398)
+
+[node name="0_BODY_001" parent="clowncar3/clown2" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00680494, -0.69336, 0.0815291)
+
+[node name="0_BOWTIE" parent="clowncar3/clown2/0_BODY_001" index="0"]
+visible = false
+
+[node name="0_NECK_RUFFLE" parent="clowncar3/clown2/0_BODY_001" index="2"]
+transform = Transform3D(1, 5.96046e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, -0.00419474, 0.357744, -0.081529)
+
+[node name="1_ARM_R_001" parent="clowncar3/clown2/0_BODY_001" index="3"]
+transform = Transform3D(0.429749, -0.734294, 0.52548, 0.90193, 0.321442, -0.28844, 0.0428884, 0.597904, 0.80042, 0.154164, 0.263407, 0.0695235)
+
+[node name="1_LEG_R_001" parent="clowncar3/clown2/0_BODY_001" index="4"]
+transform = Transform3D(0.984876, -0.0678166, -0.159449, 0.167537, 0.137911, 0.976173, -0.0442099, -0.988121, 0.147187, -0.093822, -0.0935764, -0.00897586)
+
+[node name="1_SHIN_R_001" parent="clowncar3/clown2/0_BODY_001/1_LEG_R_001" index="0"]
+transform = Transform3D(1, 5.96046e-08, 0, 0, 1, 0, -2.98023e-08, 0, 1, -0.0537915, -0.516661, 0.0728369)
+
+[node name="2_ARM_L_001" parent="clowncar3/clown2/0_BODY_001" index="5"]
+transform = Transform3D(0.723801, 0.0546312, 0.687844, -0.486412, 0.747443, 0.452474, -0.489405, -0.662076, 0.567573, -0.105303, 0.370909, -0.113769)
+
+[node name="2_FOREARM_L_001" parent="clowncar3/clown2/0_BODY_001/2_ARM_L_001" index="0"]
+transform = Transform3D(0.592211, 0.747303, -0.301369, -0.242706, -0.191207, -0.951069, -0.768362, 0.636378, 0.0681415, -0.252343, -0.0852098, -0.0879769)
+
+[node name="1_HAND_R" parent="clowncar3/clown2/0_BODY_001/2_ARM_L_001/2_FOREARM_L_001" index="0"]
+transform = Transform3D(0.508756, 0.860911, -2.98023e-08, -0.860911, 0.508756, 5.96046e-08, -2.08616e-07, -5.96046e-08, 1, -0.375301, -0.113407, -0.0461054)
+
+[node name="2_LEG_L_001" parent="clowncar3/clown2/0_BODY_001" index="6"]
+transform = Transform3D(0.955873, -0.137458, -0.259643, 0.255599, -0.0466053, 0.965659, -0.144838, -0.989411, -0.0094146, 0.102022, -0.091217, -0.00903535)
+
+[node name="2_SHIN_L_001" parent="clowncar3/clown2/0_BODY_001/2_LEG_L_001" index="0"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -2.98023e-08, 0, 0, 1, 0.0500298, -0.516662, 0.0724792)
+
+[node name="4_HAT_CONE" parent="clowncar3/clown2/0_BODY_001/CLOWN_HEAD" index="1"]
+visible = false
+
+[node name="5_HAIR_1" parent="clowncar3/clown2/0_BODY_001/CLOWN_HEAD" index="2"]
+visible = false
+
+[node name="5_HAIR_2_001" parent="clowncar3/clown2/0_BODY_001/CLOWN_HEAD" index="4"]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.276
+anchor_right = 0.724
+anchor_bottom = 0.421
+offset_left = 0.547974
+offset_right = -0.548035
+offset_bottom = 0.191986
+grow_horizontal = 2
+texture = ExtResource("8_8vcys")
+expand_mode = 5
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -281.0
+offset_right = 350.0
+offset_bottom = -32.0
+grow_vertical = 0
+theme = ExtResource("3_28ljp")
+
+[node name="StartButton" type="Button" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 2
+theme = ExtResource("3_28ljp")
+text = "Start Game"
+script = ExtResource("4_c32hg")
+
+[node name="Container" type="Container" parent="CanvasLayer/MainMenuButtons"]
+custom_minimum_size = Vector2(0, 10.17)
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 2
+theme = ExtResource("3_28ljp")
+text = "Settings"
+script = ExtResource("5_00ytd")
+
+[node name="settingsound" type="AudioStreamPlayer" parent="CanvasLayer/MainMenuButtons/SettingsButton"]
+stream = ExtResource("6_yflig")
+
+[node name="Container2" type="Container" parent="CanvasLayer/MainMenuButtons"]
+custom_minimum_size = Vector2(0, 10.17)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/MainMenuButtons"]
+layout_mode = 2
+theme = ExtResource("3_28ljp")
+text = "Quit"
+script = ExtResource("4_tdc1b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100.935, 0, 0, 0, -1.09278e-06, 100.935, 0, -25, -4.41201e-06, 0, 6.0194, 0)
+material_override = SubResource("StandardMaterial3D_rh1su")
+mesh = SubResource("PlaneMesh_0ddan")
+
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/StartButton" to="CanvasLayer/MainMenuButtons/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/SettingsButton" to="CanvasLayer/MainMenuButtons/SettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButtons/QuitButton" to="CanvasLayer/MainMenuButtons/QuitButton" method="_on_pressed"]
+
+[editable path="clowncar3/clown"]
+[editable path="clowncar3/clown2"]

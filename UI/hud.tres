@@ -4,4 +4,4 @@
 
 [resource]
 default_font = ExtResource("1_cofmt")
-default_font_size = 64
+default_font_size = 24

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://clr4vdt3hreo6"]
+[gd_scene load_steps=15 format=3 uid="uid://clr4vdt3hreo6"]
 
 [ext_resource type="PackedScene" uid="uid://c8qsfheaqenhd" path="res://prefabs/follow_cam.tscn" id="1_kcxay"]
-[ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="2_580xi"]
+[ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="2_580xi"]
 [ext_resource type="PackedScene" uid="uid://dxgmrf2lrx4q5" path="res://prefabs/reference_block.tscn" id="3_joaje"]
 [ext_resource type="PackedScene" uid="uid://due7e4irws21g" path="res://prefabs/sphere_car.tscn" id="4_o23u7"]
+[ext_resource type="PackedScene" uid="uid://strk88qtvmhu" path="res://UI/hud.tscn" id="5_36vq5"]
 [ext_resource type="Theme" uid="uid://csmql14t37xar" path="res://UI/hud.tres" id="5_86y8w"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="6_k4g63"]
 [ext_resource type="Script" path="res://scenes/Countdown.gd" id="7_2vebb"]
@@ -85,9 +86,9 @@ path_joined = true
 [node name="SphereCar" parent="." instance=ExtResource("4_o23u7")]
 transform = Transform3D(0.999981, 0.00614352, 0, -0.00614352, 0.999981, 0, 0, 0, 1, 0, 3.00054, 0)
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" parent="." instance=ExtResource("5_36vq5")]
 
-[node name="TimeNumberLabel" type="Label" parent="HUD"]
+[node name="TimeNumberLabel2" type="Label" parent="HUD"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -102,34 +103,34 @@ text = "0"
 horizontal_alignment = 1
 script = ExtResource("6_k4g63")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HUD"]
 offset_left = 40.0
 offset_top = 25.0
 offset_right = 529.0
 offset_bottom = 648.0
 
-[node name="ScoreLabel" type="Label" parent="HUD/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="HUD/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("5_86y8w")
 theme_override_font_sizes/font_size = 64
 text = "Clowns: "
 
-[node name="LapsLabel" type="Label" parent="HUD/VBoxContainer"]
+[node name="LapsLabel" type="Label" parent="HUD/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("5_86y8w")
 theme_override_font_sizes/font_size = 64
 text = "Laps:"
 
-[node name="Countdown" type="Label" parent="HUD"]
+[node name="Countdown2" type="Label" parent="HUD"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -11.5
-offset_right = 54.5
-offset_bottom = 11.5
+offset_left = -194.5
+offset_top = -35.5
+offset_right = 194.5
+offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_86y8w")
@@ -138,9 +139,6 @@ text = "COUNTDOWN"
 horizontal_alignment = 1
 script = ExtResource("7_2vebb")
 
-[node name="Timer" type="Timer" parent="HUD/Countdown"]
+[node name="Timer" type="Timer" parent="HUD/Countdown2"]
 one_shot = true
 autostart = true
-
-[connection signal="startinggunfired" from="HUD/Countdown" to="SphereCar" method="_on_countdown_startinggunfired"]
-[connection signal="startinggunfired" from="HUD/Countdown" to="HUD/TimeNumberLabel" method="_on_countdown_startinggunfired"]
