@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dawgdax5wtcwx"]
+[gd_scene load_steps=17 format=3 uid="uid://dawgdax5wtcwx"]
 
 [ext_resource type="PackedScene" uid="uid://bs4d23cmbkc4m" path="res://artwork/clowns/clown.glb" id="1_bati4"]
 [ext_resource type="PackedScene" uid="uid://c3cbb6ddjy4ys" path="res://artwork/car/clowncar3.glb" id="2_x8dvv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1dxa4wflac5o" path="res://UI/LAUGH-TRACK-_TITLE_-ALPHA.png" id="8_8vcys"]
 [ext_resource type="Texture2D" uid="uid://b4p5revottspx" path="res://artwork/clowns/STAR-TEXTURE_GGJ24_2.png" id="8_oiywf"]
 [ext_resource type="PackedScene" uid="uid://dtsdo511uuj6m" path="res://artwork/car/Clowncar_swheel.glb" id="10_7kfna"]
+[ext_resource type="AudioStream" uid="uid://cqqwtet03imp" path="res://audio/music/MUSIC_Bossa_Nova_Fun_Fast_Loop.mp3" id="11_gq8di"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yysij"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -204,6 +205,11 @@ script = ExtResource("4_tdc1b")
 transform = Transform3D(100.935, 0, 0, 0, -1.09278e-06, 100.935, 0, -25, -4.41201e-06, 0, 6.0194, 0)
 material_override = SubResource("StandardMaterial3D_rh1su")
 mesh = SubResource("PlaneMesh_0ddan")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_gq8di")
+volume_db = -16.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/MainMenuButtons/StartButton" to="CanvasLayer/MainMenuButtons/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuButtons/SettingsButton" to="CanvasLayer/MainMenuButtons/SettingsButton" method="_on_pressed"]

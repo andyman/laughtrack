@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://les4a8kewvl7"]
 
 [ext_resource type="Material" uid="uid://cc6l6fwnu3mhk" path="res://artwork/shared/simple_vertex_colored_material.tres" id="1_fqbiv"]
-[ext_resource type="PackedScene" uid="uid://by7rh80xsgt7p" path="res://prefabs/escape_to_quit.tscn" id="2_45gt4"]
+[ext_resource type="PackedScene" path="res://prefabs/escape_to_quit.tscn" id="2_45gt4"]
 [ext_resource type="PackedScene" uid="uid://pvemd42j1f8r" path="res://prefabs/racetrack/road_start.tscn" id="3_5qoh7"]
 [ext_resource type="PackedScene" uid="uid://vnn46eh0kg3f" path="res://prefabs/racetrack/road_straight.tscn" id="4_2na4s"]
 [ext_resource type="PackedScene" uid="uid://cokkl8lr4evc5" path="res://prefabs/racetrack/road_straight_long.tscn" id="5_06bq4"]
