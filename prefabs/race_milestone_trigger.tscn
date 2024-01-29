@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://etlexue5kq0r"]
+
+[ext_resource type="Script" path="res://scripts/race_milestone_trigger.gd" id="1_sxmx1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wedih"]
+size = Vector3(50, 50, 5)
+
+[node name="RaceMilestoneTrigger" type="Area3D"]
+script = ExtResource("1_sxmx1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wedih")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

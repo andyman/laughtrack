@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://strk88qtvmhu"]
+
+[ext_resource type="Theme" uid="uid://csmql14t37xar" path="res://UI/hud.tres" id="1_y0pmc"]
+[ext_resource type="Script" path="res://scripts/timer.gd" id="2_xip6k"]
+[ext_resource type="Script" path="res://scenes/Countdown.gd" id="3_pj3jo"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="TimeNumberLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.5
+offset_right = 90.5
+offset_bottom = 63.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_y0pmc")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("2_xip6k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 25.0
+offset_right = 529.0
+offset_bottom = 648.0
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_y0pmc")
+theme_override_font_sizes/font_size = 64
+text = "Clowns: "
+
+[node name="LapsLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_y0pmc")
+theme_override_font_sizes/font_size = 64
+text = "Laps:"
+
+[node name="Countdown" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -11.5
+offset_right = 54.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y0pmc")
+theme_override_font_sizes/font_size = 72
+text = "COUNTDOWN"
+horizontal_alignment = 1
+script = ExtResource("3_pj3jo")
+
+[node name="Timer" type="Timer" parent="Countdown"]
+one_shot = true
+autostart = true
+
+[connection signal="startinggunfired" from="Countdown" to="TimeNumberLabel" method="_on_countdown_startinggunfired"]

@@ -43,6 +43,7 @@ text = "12"
 horizontal_alignment = 1
 
 [node name="ScoreLabel3" type="Label" parent="ScoreValue"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 95.0
 offset_right = 203.0
@@ -55,6 +56,7 @@ text = "50% FASTER"
 horizontal_alignment = 1
 
 [node name="ScoreLabel2" type="Label" parent="ScoreValue"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 61.0
 offset_right = 203.0
@@ -79,6 +81,7 @@ text = "12"
 horizontal_alignment = 1
 
 [node name="Speed" type="Label" parent="SpeedValue"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 62.0
 offset_right = 204.0
@@ -103,6 +106,7 @@ text = "1/3"
 horizontal_alignment = 1
 
 [node name="LapsLabel" type="Label" parent="LapsValue"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 62.0
 offset_right = 204.0
